@@ -1,6 +1,9 @@
 package com.mundobachata.mineborium;
 
 import com.mojang.logging.LogUtils;
+import com.mundobachata.mineborium.block.ModBlocks;
+import com.mundobachata.mineborium.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -18,6 +21,9 @@ public class Mineborium {
     public Mineborium() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -29,6 +35,8 @@ public class Mineborium {
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
-
+        if(event.getTab() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.MALBORIUM_ORE_BLOCK);
+        }
     }
 }
