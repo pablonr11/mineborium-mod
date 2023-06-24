@@ -37,6 +37,7 @@ public class Mineborium {
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
         if(event.getTab() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.MALBORIUM_ORE_BLOCK);
+            event.accept(ModBlocks.DEEPSLATE_MALBORIUM_ORE_BLOCK);
         }
     }
 }
