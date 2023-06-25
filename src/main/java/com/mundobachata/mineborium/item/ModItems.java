@@ -13,6 +13,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> MALBORIUM = ITEMS.register("malborium",
             () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> CIGARETTE_FILTER = ITEMS.register("cigarette_filter",
+            () -> new Item(new Item.Properties()));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

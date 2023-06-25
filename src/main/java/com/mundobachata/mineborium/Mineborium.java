@@ -42,6 +42,7 @@ public class Mineborium {
 
         if(event.getTab() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.MALBORIUM);
+            event.accept(ModItems.CIGARETTE_FILTER);
         }
     }
 }
