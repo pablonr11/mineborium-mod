@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "minecraft:paper"
+    },
+    "F": {
+      "item": "mineborium:cigarette_filter"
+    },
+    "M": {
+      "item": "mineborium:malborium"
+    }
+  },
+  "pattern": [
+    "PMP",
+    "PMP",
+    "PFP"
+  ],
+  "result": {
+    "count": 1,
+    "item": "mineborium:cigarette"
+  },
+  "show_notification": true
+}
