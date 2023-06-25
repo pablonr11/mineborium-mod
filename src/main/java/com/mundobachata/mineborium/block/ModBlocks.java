@@ -1,13 +1,12 @@
 package com.mundobachata.mineborium.block;
 
 import com.mundobachata.mineborium.Mineborium;
+import com.mundobachata.mineborium.block.custom.MalboriumOreBlock;
 import com.mundobachata.mineborium.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;

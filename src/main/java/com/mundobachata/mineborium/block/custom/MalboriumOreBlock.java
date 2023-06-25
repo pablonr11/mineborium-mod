@@ -1,4 +1,4 @@
-package com.mundobachata.mineborium.block;
+package com.mundobachata.mineborium.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
