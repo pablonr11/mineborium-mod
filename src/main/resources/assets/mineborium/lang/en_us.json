@@ -1,4 +1,6 @@
 {
+  "item.mineborium.malborium": "Malborium",
+
   "block.mineborium.malborium_ore_block": "Malborium ore block",
   "block.mineborium.deepslate_malborium_ore_block": "Deepslate malborium ore block"
 }
