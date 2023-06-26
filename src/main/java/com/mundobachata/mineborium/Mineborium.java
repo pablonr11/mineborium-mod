@@ -3,6 +3,7 @@ package com.mundobachata.mineborium;
 import com.mojang.logging.LogUtils;
 import com.mundobachata.mineborium.block.ModBlocks;
 import com.mundobachata.mineborium.item.ModItems;
+import com.mundobachata.mineborium.networking.ModNetworking;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -31,7 +32,11 @@ public class Mineborium {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
+//        event.enqueueWork(() -> {
+//            ModNetworking.register();
+//        });
+        // This should work inside the event.enqueueWork Supplier but it is not working in there so...
+        ModNetworking.register();
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
