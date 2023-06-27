@@ -24,7 +24,7 @@
                   }
                 }
               ],
-              "name": "mineborium:deepslate_malborium_ore_block"
+              "name": "mineborium:malborium_ore_block"
             },
             {
               "type": "minecraft:item",
@@ -33,8 +33,8 @@
                   "add": false,
                   "count": {
                     "type": "minecraft:uniform",
-                    "min": 2.0,
-                    "max": 5.0
+                    "max": 5.0,
+                    "min": 2.0
                   },
                   "function": "minecraft:set_count"
                 },
