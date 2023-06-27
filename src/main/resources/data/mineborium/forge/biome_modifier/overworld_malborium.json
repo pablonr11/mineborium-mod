@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#is_overworld",
+  "features": "mineborium:malborium_placed",
+  "step": "underground_ores"
+}
