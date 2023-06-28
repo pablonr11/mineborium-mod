@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "mineborium:block/dry_compact_malborium_block"
+  }
+}

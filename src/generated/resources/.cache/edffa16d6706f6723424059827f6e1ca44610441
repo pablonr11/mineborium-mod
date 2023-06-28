@@ -1,7 +1,13 @@
-// 1.19.4	2023-06-27T19:10:22.5591208	Block States: mineborium
+// 1.19.4	2023-06-28T19:49:54.105522	Block States: mineborium
+655adad3ec5ada0045a09235c1929c5a365c4edf assets/mineborium/blockstates/compact_malborium_block.json
 7cda68d83011efd1dd74fa4f7127a7f853530679 assets/mineborium/blockstates/deepslate_malborium_ore_block.json
+f534fd7ba73eac5436b965fca1dc19d14e38cb6a assets/mineborium/blockstates/dry_compact_malborium_block.json
 4a9a03b78ff5e89aa5471fa378af8d80f118903f assets/mineborium/blockstates/malborium_ore_block.json
+27200af281e3b80f80720867cadc3b24fe86b4b6 assets/mineborium/models/block/compact_malborium_block.json
 1dab56f2eba2db021c4839a55f6bfc0007f5044b assets/mineborium/models/block/deepslate_malborium_ore_block.json
+e1a641a344cc594fc244f1b9742bebfa97152058 assets/mineborium/models/block/dry_compact_malborium_block.json
 cf0466c5a6493053509b295c2d503f639fef5869 assets/mineborium/models/block/malborium_ore_block.json
+abe12d71e038fb86245ee12058060b5fcdbf9fe4 assets/mineborium/models/item/compact_malborium_block.json
 923eaeec081b1c37373c961bb3bbe648a7e43b0c assets/mineborium/models/item/deepslate_malborium_ore_block.json
+b4cd2a80e634c732633eb21cb0b1d2a0008ca2a3 assets/mineborium/models/item/dry_compact_malborium_block.json
 dfa56171b3ea4f46ec46db1475fa63d056b33c9a assets/mineborium/models/item/malborium_ore_block.json

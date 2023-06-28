@@ -17,6 +17,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.MALBORIUM_ORE_BLOCK);
         blockWithItem(ModBlocks.DEEPSLATE_MALBORIUM_ORE_BLOCK);
+        blockWithItem(ModBlocks.MALBORIUM_BLOCK);
+        blockWithItem(ModBlocks.MALBORIUM_DRIED_BLOCK);
 
     }
 

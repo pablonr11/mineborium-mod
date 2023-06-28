@@ -1,3 +1,5 @@
-// 1.19.4	2023-06-27T19:10:22.5601209	Loot Tables
+// 1.19.4	2023-06-28T19:49:54.1065223	Loot Tables
+5cda2998b0a0894c72ea20d3addb9628dd0a9d75 data/mineborium/loot_tables/blocks/compact_malborium_block.json
 e410ebac4c9bbc77856e6def1933495b2e7c0ace data/mineborium/loot_tables/blocks/deepslate_malborium_ore_block.json
+31e3c5aa51d232378eb219caa4aa8b2fdfe66f51 data/mineborium/loot_tables/blocks/dry_compact_malborium_block.json
 b92823d9efee21942b575372b07d34d91b0e950b data/mineborium/loot_tables/blocks/malborium_ore_block.json

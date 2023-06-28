@@ -29,6 +29,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         add(ModBlocks.DEEPSLATE_MALBORIUM_ORE_BLOCK.get(),
                 (block) -> createMalboriumOreDrops(ModBlocks.DEEPSLATE_MALBORIUM_ORE_BLOCK.get()));
+
+        dropSelf(ModBlocks.MALBORIUM_BLOCK.get());
+        dropSelf(ModBlocks.MALBORIUM_DRIED_BLOCK.get());
     }
 
     @Override

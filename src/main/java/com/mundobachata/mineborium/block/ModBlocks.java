@@ -2,11 +2,14 @@ package com.mundobachata.mineborium.block;
 
 import com.mundobachata.mineborium.Mineborium;
 import com.mundobachata.mineborium.block.custom.MalboriumOreBlock;
+import com.mundobachata.mineborium.block.custom.WeatheringMalborium;
+import com.mundobachata.mineborium.block.custom.WeatheringMalboriumFullBlock;
 import com.mundobachata.mineborium.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -31,6 +34,18 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .strength(4.5f, 4.5f)
                     .sound(SoundType.DEEPSLATE), UniformInt.of(2, 6)));
+    public static final RegistryObject<Block> MALBORIUM_BLOCK = registerBlock("compact_malborium_block",
+            () -> new WeatheringMalboriumFullBlock(WeatheringMalborium.WeatherState.UNAFFECTED,
+                    BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)
+                            .instabreak()
+                            .sound(SoundType.CROP)
+            ));
+    public static final RegistryObject<Block> MALBORIUM_DRIED_BLOCK = registerBlock("dry_compact_malborium_block",
+            () -> new WeatheringMalboriumFullBlock(WeatheringMalborium.WeatherState.DRY,
+                    BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)
+                            .instabreak()
+                            .sound(SoundType.CROP)
+            ));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

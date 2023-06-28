@@ -53,5 +53,10 @@ public class Mineborium {
         if(event.getTab() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(ModItems.CIGARETTE);
         }
+
+        if(event.getTab() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.MALBORIUM_BLOCK);
+            event.accept(ModBlocks.MALBORIUM_DRIED_BLOCK);
+        }
     }
 }
