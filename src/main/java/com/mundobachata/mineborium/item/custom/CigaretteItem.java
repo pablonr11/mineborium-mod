@@ -14,7 +14,7 @@ import net.minecraft.world.level.Level;
 public class CigaretteItem extends Item {
 
     public CigaretteItem(Properties properties) {
-        super(properties.food(new FoodProperties.Builder().alwaysEat().saturationMod(0.8F).alwaysEat().build()));
+        super(properties.food(new FoodProperties.Builder().alwaysEat().saturationMod(3.5F).alwaysEat().build()));
     }
 
     @Override
@@ -33,5 +33,10 @@ public class CigaretteItem extends Item {
     public SoundEvent getDrinkingSound() { return SoundEvents.FIRE_AMBIENT; }
 
     public SoundEvent getEatingSound() { return SoundEvents.FIRE_EXTINGUISH; }
+
+    @Override
+    public int getUseDuration(ItemStack p_41454_) {
+        return 64;
+    }
 }
 
