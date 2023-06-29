@@ -6,6 +6,8 @@
   "block.mineborium.marlborium_ore_block": "Marlborium ore block",
   "block.mineborium.deepslate_marlborium_ore_block": "Deepslate marlborium ore block",
   "block.mineborium.compact_marlborium_block": "Compact marlborium",
-  "block.mineborium.dry_compact_marlborium_block": "Dry compact marlborium"
+  "block.mineborium.dry_compact_marlborium_block": "Dry compact marlborium",
+
+  "creativemodetab.mineborium_tab": "Marlborium mod"
 
 }

@@ -2,6 +2,7 @@ package com.mundobachata.mineborium;
 
 import com.mojang.logging.LogUtils;
 import com.mundobachata.mineborium.block.ModBlocks;
+import com.mundobachata.mineborium.item.ModCreativeModeTabs;
 import com.mundobachata.mineborium.item.ModItems;
 import com.mundobachata.mineborium.networking.ModNetworking;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -57,6 +58,17 @@ public class Mineborium {
         if(event.getTab() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.MARLBORIUM_BLOCK);
             event.accept(ModBlocks.MARLBORIUM_DRIED_BLOCK);
+        }
+
+        if(event.getTab() == ModCreativeModeTabs.MINEBORIUM_TAB) {
+            event.accept(ModBlocks.MARLBORIUM_ORE_BLOCK);
+            event.accept(ModBlocks.DEEPSLATE_MARLBORIUM_ORE_BLOCK);
+            event.accept(ModBlocks.MARLBORIUM_BLOCK);
+            event.accept(ModBlocks.MARLBORIUM_DRIED_BLOCK);
+            event.accept(ModItems.CIGARETTE);
+            event.accept(ModItems.MARLBORIUM);
+            event.accept(ModItems.CIGARETTE_FILTER);
+
         }
     }
 
