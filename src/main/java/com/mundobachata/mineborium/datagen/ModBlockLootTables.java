@@ -38,7 +38,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     }
 
     protected LootTable.Builder createMarlboriumOreDrops(Block block) {
-        return createSilkTouchDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(ModItems.MARLBORIUM.get())
+        return createSilkTouchDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(ModItems.MARLBORIUM_NUGGET.get())
                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0f, 5.0f)))
                 .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE))));
     }

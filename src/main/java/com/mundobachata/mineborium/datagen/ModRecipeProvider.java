@@ -32,12 +32,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CIGARETTE.get())
                 .define('P', Items.PAPER)
                 .define('F', ModItems.CIGARETTE_FILTER.get())
-                .define('M', ModItems.MARLBORIUM.get())
+                .define('M', ModItems.MARLBORIUM_NUGGET.get())
                 .pattern("PMP")
                 .pattern("PMP")
                 .pattern("PFP")
                 .unlockedBy("has_marlborium", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.MARLBORIUM.get()).build()))
+                        .of(ModItems.MARLBORIUM_NUGGET.get()).build()))
                 .save(consumer);
     }
 }

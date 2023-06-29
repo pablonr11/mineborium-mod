@@ -12,7 +12,7 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, Mineborium.MOD_ID);
 
-    public static final RegistryObject<Item> MARLBORIUM = ITEMS.register("marlborium",
+    public static final RegistryObject<Item> MARLBORIUM_NUGGET = ITEMS.register("marlborium_nugget",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CIGARETTE_FILTER = ITEMS.register("cigarette_filter",
             () -> new Item(new Item.Properties()));
