@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "mineborium:malborium_ore_block",
-    "mineborium:deepslate_malborium_ore_block"
+    "mineborium:marlborium_ore_block",
+    "mineborium:deepslate_marlborium_ore_block"
   ]
 }

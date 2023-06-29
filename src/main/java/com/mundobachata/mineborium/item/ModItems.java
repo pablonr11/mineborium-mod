@@ -3,7 +3,6 @@ package com.mundobachata.mineborium.item;
 import com.mundobachata.mineborium.Mineborium;
 import com.mundobachata.mineborium.item.custom.CigaretteItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -13,7 +12,7 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, Mineborium.MOD_ID);
 
-    public static final RegistryObject<Item> MALBORIUM = ITEMS.register("malborium",
+    public static final RegistryObject<Item> MARLBORIUM = ITEMS.register("marlborium",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CIGARETTE_FILTER = ITEMS.register("cigarette_filter",
             () -> new Item(new Item.Properties()));

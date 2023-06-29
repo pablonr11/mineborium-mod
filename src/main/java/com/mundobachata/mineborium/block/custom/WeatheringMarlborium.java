@@ -11,9 +11,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import java.util.Optional;
 import java.util.function.Supplier;
 
-public interface WeatheringMalborium extends ChangeOverTimeBlock<WeatheringMalborium.WeatherState> {
+public interface WeatheringMarlborium extends ChangeOverTimeBlock<WeatheringMarlborium.WeatherState> {
 
-    Supplier<BiMap<Block, Block>> NEXT_BY_BLOCK = Suppliers.memoize(() -> ImmutableBiMap.<Block, Block>builder().put(ModBlocks.MALBORIUM_BLOCK.get(), ModBlocks.MALBORIUM_DRIED_BLOCK.get()).build());
+    Supplier<BiMap<Block, Block>> NEXT_BY_BLOCK = Suppliers.memoize(() -> ImmutableBiMap.<Block, Block>builder().put(ModBlocks.MARLBORIUM_BLOCK.get(), ModBlocks.MARLBORIUM_DRIED_BLOCK.get()).build());
 
     Supplier<BiMap<Block, Block>> PREVIOUS_BY_BLOCK = Suppliers.memoize(() -> NEXT_BY_BLOCK.get().inverse());
 

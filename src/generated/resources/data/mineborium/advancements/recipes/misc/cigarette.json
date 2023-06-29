@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_malborium": {
+    "has_marlborium": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mineborium:malborium"
+              "mineborium:marlborium"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_malborium",
+      "has_marlborium",
       "has_the_recipe"
     ]
   ],

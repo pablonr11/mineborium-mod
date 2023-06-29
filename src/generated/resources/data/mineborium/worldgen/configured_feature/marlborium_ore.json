@@ -6,7 +6,7 @@
     "targets": [
       {
         "state": {
-          "Name": "mineborium:malborium_ore_block",
+          "Name": "mineborium:marlborium_ore_block",
           "Properties": {
             "lit": "false"
           }
@@ -18,7 +18,7 @@
       },
       {
         "state": {
-          "Name": "mineborium:deepslate_malborium_ore_block",
+          "Name": "mineborium:deepslate_marlborium_ore_block",
           "Properties": {
             "lit": "false"
           }

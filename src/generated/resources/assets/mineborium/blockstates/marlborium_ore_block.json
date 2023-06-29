@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "mineborium:block/marlborium_ore_block"
+    }
+  }
+}

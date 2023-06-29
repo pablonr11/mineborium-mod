@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "mineborium:block/compact_malborium_block"
+    "all": "mineborium:block/deepslate_marlborium_ore_block"
   }
 }

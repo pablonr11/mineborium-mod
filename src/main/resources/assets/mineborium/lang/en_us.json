@@ -1,11 +1,11 @@
 {
-  "item.mineborium.malborium": "Malborium",
+  "item.mineborium.marlborium": "Marlborium",
   "item.mineborium.cigarette_filter": "Filter",
   "item.mineborium.cigarette": "Cigarette",
 
-  "block.mineborium.malborium_ore_block": "Malborium ore block",
-  "block.mineborium.deepslate_malborium_ore_block": "Deepslate malborium ore block",
-  "block.mineborium.compact_malborium_block": "Compact malborium",
-  "block.mineborium.dry_compact_malborium_block": "Dry compact malborium"
+  "block.mineborium.marlborium_ore_block": "Marlborium ore block",
+  "block.mineborium.deepslate_marlborium_ore_block": "Deepslate marlborium ore block",
+  "block.mineborium.compact_marlborium_block": "Compact marlborium",
+  "block.mineborium.dry_compact_marlborium_block": "Dry compact marlborium"
 
 }

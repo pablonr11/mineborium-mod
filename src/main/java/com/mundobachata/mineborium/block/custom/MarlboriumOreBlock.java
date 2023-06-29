@@ -18,17 +18,17 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Vector3f;
 
-public class MalboriumOreBlock extends DropExperienceBlock {
+public class MarlboriumOreBlock extends DropExperienceBlock {
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
-    private static final Vector3f MALBORIUM_PARTICLE_COLOR = Vec3.fromRGB24(0).toVector3f();
-    private static final DustParticleOptions SMOKE = new DustParticleOptions(MALBORIUM_PARTICLE_COLOR, 1.0f);
+    private static final Vector3f MARLBORIUM_PARTICLE_COLOR = Vec3.fromRGB24(0).toVector3f();
+    private static final DustParticleOptions SMOKE = new DustParticleOptions(MARLBORIUM_PARTICLE_COLOR, 1.0f);
 
-    public MalboriumOreBlock(Properties p_221081_) {
+    public MarlboriumOreBlock(Properties p_221081_) {
         super(p_221081_);
         this.registerDefaultState(this.defaultBlockState().setValue(LIT, Boolean.valueOf(false)));
     }
 
-    public MalboriumOreBlock(Properties p_221083_, IntProvider p_221084_) {
+    public MarlboriumOreBlock(Properties p_221083_, IntProvider p_221084_) {
         super(p_221083_, p_221084_);
         this.registerDefaultState(this.defaultBlockState().setValue(LIT, Boolean.valueOf(false)));
     }

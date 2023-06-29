@@ -16,11 +16,11 @@ import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import java.util.List;
 
 public class ModPlacedFeatures {
-    public static final ResourceKey<PlacedFeature> OVERWORLD_MALBORIUM_PLACED_KEY = createKey("malborium_placed");
+    public static final ResourceKey<PlacedFeature> OVERWORLD_MARLBORIUM_PLACED_KEY = createKey("marlborium_placed");
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        register(context, OVERWORLD_MALBORIUM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_MALBORIUM_ORE_KEY),
+        register(context, OVERWORLD_MARLBORIUM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_MARLBORIUM_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(8, // Veins per chunk
                         HeightRangePlacement.triangle(VerticalAnchor.absolute(-40), VerticalAnchor.absolute(40))));
     }

@@ -24,7 +24,7 @@
                   }
                 }
               ],
-              "name": "mineborium:malborium_ore_block"
+              "name": "mineborium:deepslate_marlborium_ore_block"
             },
             {
               "type": "minecraft:item",
@@ -50,7 +50,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "mineborium:malborium"
+              "name": "mineborium:marlborium"
             }
           ]
         }

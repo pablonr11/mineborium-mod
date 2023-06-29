@@ -9,11 +9,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-import java.util.Optional;
-
-public class WeatheringMalboriumFullBlock extends LeavesBlock implements WeatheringMalborium{
-    private final WeatheringMalborium.WeatherState weatherState;
-    public WeatheringMalboriumFullBlock(WeatheringMalborium.WeatherState weatherState, Properties properties) {
+public class WeatheringMarlboriumFullBlock extends LeavesBlock implements WeatheringMarlborium {
+    private final WeatheringMarlborium.WeatherState weatherState;
+    public WeatheringMarlboriumFullBlock(WeatheringMarlborium.WeatherState weatherState, Properties properties) {
         super(properties);
         this.weatherState = weatherState;
     }
@@ -22,7 +20,7 @@ public class WeatheringMalboriumFullBlock extends LeavesBlock implements Weather
         this.onRandomTick(blockState, level, pos, source);
     }
     public boolean isRandomlyTicking(BlockState blockState) {
-        return WeatheringMalborium.getNext(blockState.getBlock()).isPresent();
+        return WeatheringMarlborium.getNext(blockState.getBlock()).isPresent();
     }
 
     public VoxelShape getBlockSupportShape(BlockState p_54456_, BlockGetter p_54457_, BlockPos p_54458_) {

@@ -1,9 +1,9 @@
 package com.mundobachata.mineborium.block;
 
 import com.mundobachata.mineborium.Mineborium;
-import com.mundobachata.mineborium.block.custom.MalboriumOreBlock;
-import com.mundobachata.mineborium.block.custom.WeatheringMalborium;
-import com.mundobachata.mineborium.block.custom.WeatheringMalboriumFullBlock;
+import com.mundobachata.mineborium.block.custom.MarlboriumOreBlock;
+import com.mundobachata.mineborium.block.custom.WeatheringMarlborium;
+import com.mundobachata.mineborium.block.custom.WeatheringMarlboriumFullBlock;
 import com.mundobachata.mineborium.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -25,23 +25,23 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, Mineborium.MOD_ID);
 
-    public static final RegistryObject<Block> MALBORIUM_ORE_BLOCK = registerBlock("malborium_ore_block",
-            () -> new MalboriumOreBlock(BlockBehaviour.Properties.of(Material.STONE)
+    public static final RegistryObject<Block> MARLBORIUM_ORE_BLOCK = registerBlock("marlborium_ore_block",
+            () -> new MarlboriumOreBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .requiresCorrectToolForDrops()
                     .strength(3.0f, 3.0f), UniformInt.of(2, 6)));
-    public static final RegistryObject<Block> DEEPSLATE_MALBORIUM_ORE_BLOCK = registerBlock("deepslate_malborium_ore_block",
-            () -> new MalboriumOreBlock(BlockBehaviour.Properties.of(Material.STONE)
+    public static final RegistryObject<Block> DEEPSLATE_MARLBORIUM_ORE_BLOCK = registerBlock("deepslate_marlborium_ore_block",
+            () -> new MarlboriumOreBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .requiresCorrectToolForDrops()
                     .strength(4.5f, 4.5f)
                     .sound(SoundType.DEEPSLATE), UniformInt.of(2, 6)));
-    public static final RegistryObject<Block> MALBORIUM_BLOCK = registerBlock("compact_malborium_block",
-            () -> new WeatheringMalboriumFullBlock(WeatheringMalborium.WeatherState.UNAFFECTED,
+    public static final RegistryObject<Block> MARLBORIUM_BLOCK = registerBlock("compact_marlborium_block",
+            () -> new WeatheringMarlboriumFullBlock(WeatheringMarlborium.WeatherState.UNAFFECTED,
                     BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)
                             .instabreak()
                             .sound(SoundType.CROP)
             ));
-    public static final RegistryObject<Block> MALBORIUM_DRIED_BLOCK = registerBlock("dry_compact_malborium_block",
-            () -> new WeatheringMalboriumFullBlock(WeatheringMalborium.WeatherState.DRY,
+    public static final RegistryObject<Block> MARLBORIUM_DRIED_BLOCK = registerBlock("dry_compact_marlborium_block",
+            () -> new WeatheringMarlboriumFullBlock(WeatheringMarlborium.WeatherState.DRY,
                     BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)
                             .instabreak()
                             .sound(SoundType.CROP)
