@@ -20,6 +20,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CIGARETTE);
         simpleItem(ModItems.CIGARETTE_FILTER);
         simpleItem(ModItems.MARLBORIUM_NUGGET);
+        simpleItem(ModItems.MARLBORIUM);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

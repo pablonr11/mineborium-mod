@@ -8,6 +8,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
 import java.util.function.Consumer;
@@ -32,12 +33,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CIGARETTE.get())
                 .define('P', Items.PAPER)
                 .define('F', ModItems.CIGARETTE_FILTER.get())
-                .define('M', ModItems.MARLBORIUM_NUGGET.get())
+                .define('M', ModItems.MARLBORIUM.get())
                 .pattern("PMP")
                 .pattern("PMP")
                 .pattern("PFP")
                 .unlockedBy("has_marlborium", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.MARLBORIUM_NUGGET.get()).build()))
+                        .of(ModItems.MARLBORIUM.get()).build()))
                 .save(consumer);
+
+        twoByTwoPacker(consumer, RecipeCategory.MISC, ModItems.MARLBORIUM.get(), ModItems.MARLBORIUM_NUGGET.get());
+    }
+
+    protected static void twoByTwoPacker(Consumer<FinishedRecipe> consumer, RecipeCategory recipeCategory, ItemLike itemLike, ItemLike itemLike1) {
+        ShapedRecipeBuilder.shaped(recipeCategory, itemLike, 1).define('#', itemLike1).pattern("##").pattern("##").unlockedBy(getHasName(itemLike1), has(itemLike1)).save(consumer);
     }
 }

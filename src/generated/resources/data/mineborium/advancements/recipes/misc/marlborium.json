@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_marlborium": {
+    "has_marlborium_nugget": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mineborium:marlborium"
+              "mineborium:marlborium_nugget"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mineborium:cigarette"
+        "recipe": "mineborium:marlborium"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_marlborium",
+      "has_marlborium_nugget",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mineborium:cigarette"
+      "mineborium:marlborium"
     ]
   }
 }
