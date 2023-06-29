@@ -3,14 +3,12 @@ package com.mundobachata.mineborium.datagen;
 import com.mundobachata.mineborium.item.ModItems;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
+import javax.annotation.Nullable;
 import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
@@ -31,7 +29,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CIGARETTE.get())
-                .define('P', Items.PAPER)
+                .define('P', ModItems.ROLLING_PAPER.get())
                 .define('F', ModItems.CIGARETTE_FILTER.get())
                 .define('M', ModItems.MARLBORIUM.get())
                 .pattern("PMP")
@@ -42,9 +40,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(consumer);
 
         twoByTwoPacker(consumer, RecipeCategory.MISC, ModItems.MARLBORIUM.get(), ModItems.MARLBORIUM_NUGGET.get());
+        oneToOneConversionRecipe(consumer, ModItems.ROLLING_PAPER.get(), Items.PAPER, "rolling_paper", 4);
     }
 
     protected static void twoByTwoPacker(Consumer<FinishedRecipe> consumer, RecipeCategory recipeCategory, ItemLike itemLike, ItemLike itemLike1) {
         ShapedRecipeBuilder.shaped(recipeCategory, itemLike, 1).define('#', itemLike1).pattern("##").pattern("##").unlockedBy(getHasName(itemLike1), has(itemLike1)).save(consumer);
+    }
+
+    protected static void oneToOneConversionRecipe(Consumer<FinishedRecipe> consumer, ItemLike crafted, ItemLike materials, @Nullable String group, int quantity) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, crafted, quantity).requires(materials).group(group).unlockedBy(getHasName(materials), has(materials)).save(consumer, getConversionRecipeName(crafted, materials));
     }
 }

@@ -1,7 +1,9 @@
-// 1.19.4	2023-06-29T20:15:38.6501387	Recipes
+// 1.19.4	2023-06-29T22:01:04.4587116	Recipes
 fceb9c588006013972f04b49eabe872017892f14 data/mineborium/advancements/recipes/misc/cigarette.json
 e12765fcf32567eccd9c8a4a1ca3782229a276f0 data/mineborium/advancements/recipes/misc/cigarette_filter.json
 9ea4cd71d32b2f2f8b15b9d5413f0a2c2e75511c data/mineborium/advancements/recipes/misc/marlborium.json
-3b44dc1b36d13a54fe1de4eb13068ed037b5cad3 data/mineborium/recipes/cigarette.json
+1f64e0c6ac943d93c9185fabc9e0c3f96e712954 data/mineborium/recipes/cigarette.json
 e2ba4364242133a831ab90c125c1fa20ffcb2892 data/mineborium/recipes/cigarette_filter.json
 52e7ae20c337d7ef204a8355de254f84895faa70 data/mineborium/recipes/marlborium.json
+3e0e4f9f4caaa86f053cbaa4f1abb36a622c2ada data/minecraft/advancements/recipes/misc/rolling_paper_from_paper.json
+e69be85cc82fd690ee84ff9a60ce2b456dc1849a data/minecraft/recipes/rolling_paper_from_paper.json

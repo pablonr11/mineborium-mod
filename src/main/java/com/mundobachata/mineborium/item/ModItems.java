@@ -21,6 +21,9 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CIGARETTE = ITEMS.register("cigarette",
             () -> new CigaretteItem(new Item.Properties()));
+    public static final RegistryObject<Item> ROLLING_PAPER = ITEMS.register("rolling_paper",
+            () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

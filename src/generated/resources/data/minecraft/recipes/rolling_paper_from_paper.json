@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "rolling_paper",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "mineborium:rolling_paper"
+  }
+}

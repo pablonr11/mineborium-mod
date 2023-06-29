@@ -50,6 +50,7 @@ public class Mineborium {
             event.accept(ModItems.MARLBORIUM_NUGGET);
             event.accept(ModItems.MARLBORIUM);
             event.accept(ModItems.CIGARETTE_FILTER);
+            event.accept(ModItems.ROLLING_PAPER);
         }
 
         if(event.getTab() == CreativeModeTabs.FOOD_AND_DRINKS) {
@@ -70,6 +71,7 @@ public class Mineborium {
             event.accept(ModItems.MARLBORIUM_NUGGET);
             event.accept(ModItems.MARLBORIUM);
             event.accept(ModItems.CIGARETTE_FILTER);
+            event.accept(ModItems.ROLLING_PAPER);
 
         }
     }
