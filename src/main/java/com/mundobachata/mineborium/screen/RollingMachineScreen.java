@@ -39,7 +39,7 @@ public class RollingMachineScreen extends AbstractContainerScreen<RollingMachine
 
     private void renderProgressCigarette(PoseStack stack, int x, int y) {
         if(menu.isCrafting()) {
-            blit(stack, x + 87, y + 41, 176, 0, menu.getScaledProgress(), 4);
+            blit(stack, x + 83, y + 41, 176, 0, menu.getScaledProgress(), 4);
         }
     }
 
