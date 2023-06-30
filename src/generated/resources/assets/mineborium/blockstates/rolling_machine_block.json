@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "mineborium:block/rolling_machine_block"
+    }
+  }
+}

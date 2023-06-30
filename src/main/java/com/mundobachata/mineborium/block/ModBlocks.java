@@ -2,6 +2,7 @@ package com.mundobachata.mineborium.block;
 
 import com.mundobachata.mineborium.Mineborium;
 import com.mundobachata.mineborium.block.custom.MarlboriumOreBlock;
+import com.mundobachata.mineborium.block.custom.RollingMachineBlock;
 import com.mundobachata.mineborium.block.custom.WeatheringMarlborium;
 import com.mundobachata.mineborium.block.custom.WeatheringMarlboriumFullBlock;
 import com.mundobachata.mineborium.item.ModItems;
@@ -46,6 +47,9 @@ public class ModBlocks {
                             .instabreak()
                             .sound(SoundType.CROP)
             ));
+
+    public static final RegistryObject<Block> ROLLING_MACHINE_BLOCK = registerBlock("rolling_machine_block",
+            () -> new RollingMachineBlock(BlockBehaviour.Properties.of(Material.WOOD)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

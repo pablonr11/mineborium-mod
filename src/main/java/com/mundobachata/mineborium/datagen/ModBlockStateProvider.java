@@ -19,6 +19,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.DEEPSLATE_MARLBORIUM_ORE_BLOCK);
         blockWithItem(ModBlocks.MARLBORIUM_BLOCK);
         blockWithItem(ModBlocks.MARLBORIUM_DRIED_BLOCK);
+        blockWithItem(ModBlocks.ROLLING_MACHINE_BLOCK);
 
     }
 
