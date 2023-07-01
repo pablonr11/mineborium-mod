@@ -3,23 +3,28 @@ package com.mundobachata.mineborium.event;
 import com.mundobachata.mineborium.Mineborium;
 import com.mundobachata.mineborium.abstinence.PlayerAbstinence;
 import com.mundobachata.mineborium.abstinence.PlayerAbstinenceProvider;
-import com.mundobachata.mineborium.screen.ModMenuTypes;
-import com.mundobachata.mineborium.screen.RollingMachineScreen;
-import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.network.chat.Component;
+import com.mundobachata.mineborium.item.ModItems;
+import com.mundobachata.mineborium.villager.ModVillagers;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+
+import java.util.List;
 
 @Mod.EventBusSubscriber(modid = Mineborium.MOD_ID)
 public class ModEvents {
@@ -71,6 +76,18 @@ public class ModEvents {
                     }
                 }
             });
+        }
+    }
+
+    @SubscribeEvent
+    public static void addCustomTrades(VillagerTradesEvent event) {
+        if(event.getType() == ModVillagers.SMOKE_SHOP_ASSISTANT.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(ModItems.MARLBORIUM_NUGGET.get(), 32);
+            int villagerLevel = 1;
+
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(stack,
+                    new ItemStack(Items.EMERALD, 1), 10, 4, 0.02F));
         }
     }
 }

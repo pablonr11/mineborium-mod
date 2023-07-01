@@ -11,5 +11,7 @@
   "block.mineborium.dry_compact_marlborium_block": "Marlborium compacto seco",
   "block.mineborium.rolling_machine_block": "Máquina de liar",
 
+  "entity.minecraft.villager.mineborium.smoke_shop_assistant": "Dependiente de estanco",
+
   "creativemodetab.mineborium_tab": "Marlborium mod"
 }

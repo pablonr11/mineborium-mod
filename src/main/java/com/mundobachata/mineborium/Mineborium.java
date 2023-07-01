@@ -8,6 +8,7 @@ import com.mundobachata.mineborium.item.ModItems;
 import com.mundobachata.mineborium.networking.ModNetworking;
 import com.mundobachata.mineborium.screen.ModMenuTypes;
 import com.mundobachata.mineborium.screen.RollingMachineScreen;
+import com.mundobachata.mineborium.villager.ModVillagers;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.common.MinecraftForge;
@@ -33,6 +34,7 @@ public class Mineborium {
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+        ModVillagers.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
@@ -41,9 +43,10 @@ public class Mineborium {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-//        event.enqueueWork(() -> {
+        event.enqueueWork(() -> {
 //            ModNetworking.register();
-//        });
+            ModVillagers.registerPOIs();
+        });
         // This should work inside the event.enqueueWork Supplier, but it is not working in there so...
         ModNetworking.register();
     }
