@@ -21,7 +21,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
-        // TODO: Test int parameter in shaped() method. It should be the amount.
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CIGARETTE_FILTER.get())
                 .define('#', Items.STRING)
                 .pattern("#")
@@ -48,6 +47,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         nineBlockStorageRecipes(consumer, RecipeCategory.MISC, ModItems.MARLBORIUM.get(),
                 RecipeCategory.MISC, ModBlocks.MARLBORIUM_BLOCK.get(), "marlborium2",
                 null, "compact_marlborium_block", null);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MARLBORIUM_ARROW.get(), 8)
+                .define('A', Items.ARROW)
+                .define('C', ModItems.CIGARETTE.get())
+                .pattern("AAA")
+                .pattern("ACA")
+                .pattern("AAA")
+                .unlockedBy("has_cigarette", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModItems.CIGARETTE.get()).build()))
+                .save(consumer);
     }
 
     protected static void twoByTwoPacker(Consumer<FinishedRecipe> consumer, RecipeCategory recipeCategory, ItemLike itemLike, ItemLike itemLike1) {

@@ -2,6 +2,7 @@ package com.mundobachata.mineborium.item;
 
 import com.mundobachata.mineborium.Mineborium;
 import com.mundobachata.mineborium.item.custom.CigaretteItem;
+import com.mundobachata.mineborium.item.custom.MarlboriumArrowItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -23,6 +24,8 @@ public class ModItems {
             () -> new CigaretteItem(new Item.Properties()));
     public static final RegistryObject<Item> ROLLING_PAPER = ITEMS.register("rolling_paper",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MARLBORIUM_ARROW = ITEMS.register("marlborium_arrow",
+            () -> new MarlboriumArrowItem(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

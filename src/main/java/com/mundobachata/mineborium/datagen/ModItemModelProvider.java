@@ -22,6 +22,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.MARLBORIUM_NUGGET);
         simpleItem(ModItems.MARLBORIUM);
         simpleItem(ModItems.ROLLING_PAPER);
+        simpleItem(ModItems.MARLBORIUM_ARROW);
+
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

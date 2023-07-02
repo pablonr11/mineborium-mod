@@ -1,6 +1,7 @@
-// 1.19.4	2023-06-29T21:57:06.1939671	Item Models: mineborium
+// 1.19.4	2023-07-02T16:32:32.8919451	Item Models: mineborium
 0f93937af541de63fc6a03c60ffa8ac8a79efa5d assets/mineborium/models/item/cigarette.json
 101d01df0e9380f54b037ca39b3b2530d3aca1a9 assets/mineborium/models/item/cigarette_filter.json
 ad300ec3d69fbcf3081ae9766cf760ece989c26a assets/mineborium/models/item/marlborium.json
+1b7b8497f0735ef0ad86d754cb0e31bf842de983 assets/mineborium/models/item/marlborium_arrow.json
 5d6fe8a33ffe6b6301426cd4d1feb53a54a6300c assets/mineborium/models/item/marlborium_nugget.json
 3c766b394e6bbf84e26a195d01b07246eb6815ca assets/mineborium/models/item/rolling_paper.json

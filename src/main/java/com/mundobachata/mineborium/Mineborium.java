@@ -3,6 +3,8 @@ package com.mundobachata.mineborium;
 import com.mojang.logging.LogUtils;
 import com.mundobachata.mineborium.block.ModBlocks;
 import com.mundobachata.mineborium.block.entity.ModBlockEntities;
+import com.mundobachata.mineborium.entity.ModEntityTypes;
+import com.mundobachata.mineborium.entity.renderer.MarlboriumArrowRenderer;
 import com.mundobachata.mineborium.item.ModCreativeModeTabs;
 import com.mundobachata.mineborium.item.ModItems;
 import com.mundobachata.mineborium.networking.ModNetworking;
@@ -11,6 +13,7 @@ import com.mundobachata.mineborium.screen.RollingMachineScreen;
 import com.mundobachata.mineborium.villager.ModVillagers;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -35,6 +38,7 @@ public class Mineborium {
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         ModVillagers.register(modEventBus);
+        ModEntityTypes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
@@ -81,6 +85,10 @@ public class Mineborium {
             event.accept(ModItems.CIGARETTE);
         }
 
+        if(event.getTab() == CreativeModeTabs.COMBAT) {
+            event.accept(ModItems.MARLBORIUM_ARROW);
+        }
+
         //Mod specific tab
 
         if(event.getTab() == ModCreativeModeTabs.MINEBORIUM_TAB) {
@@ -94,6 +102,7 @@ public class Mineborium {
             event.accept(ModItems.MARLBORIUM);
             event.accept(ModItems.CIGARETTE_FILTER);
             event.accept(ModItems.ROLLING_PAPER);
+            event.accept(ModItems.MARLBORIUM_ARROW);
 
         }
     }
@@ -103,6 +112,12 @@ public class Mineborium {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             MenuScreens.register(ModMenuTypes.ROLLING_MACHINE_MENU.get(), RollingMachineScreen::new);
+        }
+
+        @SubscribeEvent
+        public static void onClientSetup(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerEntityRenderer(ModEntityTypes.MARLBORIUM_ARROW.get(),
+                    MarlboriumArrowRenderer::new);
         }
     }
 
