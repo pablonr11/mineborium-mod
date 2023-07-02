@@ -23,7 +23,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.MARLBORIUM);
         simpleItem(ModItems.ROLLING_PAPER);
         simpleItem(ModItems.MARLBORIUM_ARROW);
-
+        handheldItem(ModItems.MARLBORIUM_SWORD);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

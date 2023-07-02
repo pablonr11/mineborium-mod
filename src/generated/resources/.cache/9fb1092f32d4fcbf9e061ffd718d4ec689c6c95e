@@ -1,15 +1,17 @@
-// 1.19.4	2023-07-02T17:00:51.4042013	Recipes
+// 1.19.4	2023-07-02T19:04:38.2919587	Recipes
 fceb9c588006013972f04b49eabe872017892f14 data/mineborium/advancements/recipes/misc/cigarette.json
 e12765fcf32567eccd9c8a4a1ca3782229a276f0 data/mineborium/advancements/recipes/misc/cigarette_filter.json
 7f6696f07e22051a4b5b4027bacf584f4e249fd2 data/mineborium/advancements/recipes/misc/compact_marlborium_block.json
 9ea4cd71d32b2f2f8b15b9d5413f0a2c2e75511c data/mineborium/advancements/recipes/misc/marlborium.json
 c0b46b1ecafe5e4bfe95a77133bb8715da1d529b data/mineborium/advancements/recipes/misc/marlborium2.json
 318c02689c57c332ff8e0781166f396cc7289054 data/mineborium/advancements/recipes/misc/marlborium_arrow.json
+1fcb6470ef256ab2419e27ae86fa946d7ac60c4e data/mineborium/advancements/recipes/misc/marlborium_sword.json
 1f64e0c6ac943d93c9185fabc9e0c3f96e712954 data/mineborium/recipes/cigarette.json
 e2ba4364242133a831ab90c125c1fa20ffcb2892 data/mineborium/recipes/cigarette_filter.json
 135e4f87687a3c16535de91cbf183ed638da8f56 data/mineborium/recipes/compact_marlborium_block.json
 52e7ae20c337d7ef204a8355de254f84895faa70 data/mineborium/recipes/marlborium.json
 11b37135b20d116e6d4533f07433eb237d749de5 data/mineborium/recipes/marlborium2.json
 02a06933f42086bdc6dcc5b385ed167af5cfde4b data/mineborium/recipes/marlborium_arrow.json
+934a6cfda7ed1dbaf15202d96762bdc3e5e3214a data/mineborium/recipes/marlborium_sword.json
 3e0e4f9f4caaa86f053cbaa4f1abb36a622c2ada data/minecraft/advancements/recipes/misc/rolling_paper_from_paper.json
 e69be85cc82fd690ee84ff9a60ce2b456dc1849a data/minecraft/recipes/rolling_paper_from_paper.json
