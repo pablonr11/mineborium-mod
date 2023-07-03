@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "mineborium:block/rolling_machine_block",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "mineborium:block/rolling_machine_block"
+    },
+    "facing=south": {
+      "model": "mineborium:block/rolling_machine_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mineborium:block/rolling_machine_block",
+      "y": 270
+    }
+  }
+}

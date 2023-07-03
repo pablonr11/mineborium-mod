@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "north": "mineborium:block/rolling_machine_front",
+    "east": "mineborium:block/rolling_machine_side",
+    "west": "mineborium:block/rolling_machine_side",
+    "up": "mineborium:block/rolling_machine_top",
+    "down": "mineborium:block/rolling_machine_bottom",
+    "south": "mineborium:block/rolling_machine_back",
+    "particle": "mineborium:block/rolling_machine_front"
+  }
+}
