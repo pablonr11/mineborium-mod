@@ -94,6 +94,7 @@ public class Mineborium {
             event.accept(ModItems.MARLBORIUM_SHOVEL);
             event.accept(ModItems.MARLBORIUM_PICKAXE);
             event.accept(ModItems.MARLBORIUM_AXE);
+            event.accept(ModItems.MARLBORIUM_HOE);
         }
 
         //Mod specific tab
@@ -114,6 +115,7 @@ public class Mineborium {
             event.accept(ModItems.MARLBORIUM_SHOVEL);
             event.accept(ModItems.MARLBORIUM_PICKAXE);
             event.accept(ModItems.MARLBORIUM_AXE);
+            event.accept(ModItems.MARLBORIUM_HOE);
         }
     }
 
