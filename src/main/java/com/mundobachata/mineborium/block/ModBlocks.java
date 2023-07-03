@@ -49,7 +49,8 @@ public class ModBlocks {
             ));
 
     public static final RegistryObject<Block> ROLLING_MACHINE_BLOCK = registerBlock("rolling_machine_block",
-            () -> new RollingMachineBlock(BlockBehaviour.Properties.of(Material.WOOD)));
+            () -> new RollingMachineBlock(BlockBehaviour.Properties.of(Material.WOOD)
+                    .strength(1.0F)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
