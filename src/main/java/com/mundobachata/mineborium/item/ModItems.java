@@ -28,7 +28,7 @@ public class ModItems {
     public static final RegistryObject<Item> MARLBORIUM_ARROW = ITEMS.register("marlborium_arrow",
             () -> new MarlboriumArrowItem(new Item.Properties()));
     public static final RegistryObject<Item> MARLBORIUM_SWORD = ITEMS.register("marlborium_sword",
-            () -> new SwordItem(new MarlboriumTier(), 4, -2.0F, new Item.Properties()));
+            () -> new SwordItem(new MarlboriumTier(), 3, -2.0F, new Item.Properties()));
     public static final RegistryObject<Item> MARLBORIUM_PICKAXE = ITEMS.register("marlborium_pickaxe",
             () -> new PickaxeItem(new MarlboriumTier(), 1, -2.4F, new Item.Properties()));
     public static final RegistryObject<Item> MARLBORIUM_AXE = ITEMS.register("marlborium_axe",
