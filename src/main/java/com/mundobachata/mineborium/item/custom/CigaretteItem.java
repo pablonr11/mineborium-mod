@@ -1,7 +1,10 @@
 package com.mundobachata.mineborium.item.custom;
 
+import com.mojang.math.Axis;
 import com.mundobachata.mineborium.networking.ModNetworking;
 import com.mundobachata.mineborium.networking.packet.SmokeC2SPacket;
+import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.LivingEntity;
@@ -21,8 +24,31 @@ public class CigaretteItem extends Item {
     public ItemStack finishUsingItem(ItemStack itemStack, Level level, LivingEntity livingEntity) {
         if(!level.isClientSide()) {
             ModNetworking.sendToServer(new SmokeC2SPacket());
+        } else {
+            double x = livingEntity.getX();
+            double y = livingEntity.getY();
+            double z = livingEntity.getZ();
+
+            Direction.Axis axis = livingEntity.getDirection().getAxis();
+            Direction.AxisDirection axisDirection = livingEntity.getDirection().getAxisDirection();
+
+            switch (axis) {
+                case X -> x += getAxisDirectionValue(axisDirection);
+                case Z -> z += getAxisDirectionValue(axisDirection);
+            }
+
+            level.addParticle(ParticleTypes.SMOKE, x, y + 1.5D,
+                    z, 0.0D, 0.0D, 0.0D);
         }
         return super.finishUsingItem(itemStack, level, livingEntity);
+    }
+
+    private double getAxisDirectionValue(Direction.AxisDirection axisDirection) {
+        if(axisDirection == Direction.AxisDirection.NEGATIVE) {
+            return -0.5D;
+        } else {
+            return 0.5D;
+        }
     }
 
     @Override
