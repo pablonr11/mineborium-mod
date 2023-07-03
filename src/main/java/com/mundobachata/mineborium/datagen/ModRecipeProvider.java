@@ -66,6 +66,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("S")
                 .unlockedBy("has_compact_marlborium_block", inventoryTrigger(ItemPredicate.Builder.item().of(ModBlocks.MARLBORIUM_BLOCK.get()).build()))
                 .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MARLBORIUM_PICKAXE.get(), 1)
+                .define('S', Items.STICK)
+                .define('M', ModBlocks.MARLBORIUM_BLOCK.get())
+                .pattern("MMM")
+                .pattern(" S ")
+                .pattern(" S ")
+                .unlockedBy("has_compact_marlborium_block", inventoryTrigger(ItemPredicate.Builder.item().of(ModBlocks.MARLBORIUM_BLOCK.get()).build()))
+                .save(consumer);
     }
 
     protected static void twoByTwoPacker(Consumer<FinishedRecipe> consumer, RecipeCategory recipeCategory, ItemLike itemLike, ItemLike itemLike1) {

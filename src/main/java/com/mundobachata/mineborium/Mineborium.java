@@ -90,6 +90,10 @@ public class Mineborium {
             event.accept(ModItems.MARLBORIUM_ARROW);
         }
 
+        if(event.getTab() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(ModItems.MARLBORIUM_PICKAXE);
+        }
+
         //Mod specific tab
 
         if(event.getTab() == ModCreativeModeTabs.MINEBORIUM_TAB) {
@@ -105,6 +109,7 @@ public class Mineborium {
             event.accept(ModItems.ROLLING_PAPER);
             event.accept(ModItems.MARLBORIUM_ARROW);
             event.accept(ModItems.MARLBORIUM_SWORD);
+            event.accept(ModItems.MARLBORIUM_PICKAXE);
         }
     }
 

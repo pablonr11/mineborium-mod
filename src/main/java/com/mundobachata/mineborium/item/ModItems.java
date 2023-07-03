@@ -4,10 +4,7 @@ import com.mundobachata.mineborium.Mineborium;
 import com.mundobachata.mineborium.item.custom.CigaretteItem;
 import com.mundobachata.mineborium.item.custom.MarlboriumArrowItem;
 import com.mundobachata.mineborium.item.custom.tier.MarlboriumTier;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -32,6 +29,8 @@ public class ModItems {
             () -> new MarlboriumArrowItem(new Item.Properties()));
     public static final RegistryObject<Item> MARLBORIUM_SWORD = ITEMS.register("marlborium_sword",
             () -> new SwordItem(new MarlboriumTier(), 4, -2.0F, new Item.Properties()));
+    public static final RegistryObject<Item> MARLBORIUM_PICKAXE = ITEMS.register("marlborium_pickaxe",
+            () -> new PickaxeItem(new MarlboriumTier(), 1, -2.4F, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

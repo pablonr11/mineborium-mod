@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": {
+      "item": "mineborium:compact_marlborium_block"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "MMM",
+    " S ",
+    " S "
+  ],
+  "result": {
+    "item": "mineborium:marlborium_pickaxe"
+  },
+  "show_notification": true
+}

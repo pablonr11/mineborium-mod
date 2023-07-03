@@ -7,7 +7,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 public class MarlboriumTier implements Tier {
     private final int LEVEL = 2;
     private final int USES = 160;
-    private final float SPEED = 6.0F;
+    private final float SPEED = 7.0F;
     private final float DAMAGE = 2.0F;
     private final int ENCHANTMENT_VALUE = 14;
     private final Ingredient REPAIR_INGREDIENT = Ingredient.of(ModItems.MARLBORIUM.get());
