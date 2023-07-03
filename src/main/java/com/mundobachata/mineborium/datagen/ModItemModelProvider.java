@@ -26,6 +26,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.MARLBORIUM_SWORD);
         handheldItem(ModItems.MARLBORIUM_PICKAXE);
         handheldItem(ModItems.MARLBORIUM_AXE);
+        handheldItem(ModItems.MARLBORIUM_SHOVEL);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
