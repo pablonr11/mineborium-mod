@@ -1,6 +1,8 @@
 package com.mundobachata.mineborium.block.entity;
 
 import com.mundobachata.mineborium.item.ModItems;
+import com.mundobachata.mineborium.networking.ModNetworking;
+import com.mundobachata.mineborium.networking.packet.ItemStackSyncS2CPacket;
 import com.mundobachata.mineborium.screen.RollingMachineMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -16,7 +18,6 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
@@ -32,6 +33,9 @@ public class RollingMachineBlockEntity extends BlockEntity implements MenuProvid
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
+            if(!level.isClientSide()) {
+                ModNetworking.sendToClient(new ItemStackSyncS2CPacket(this, worldPosition));
+            }
         }
     };
 
@@ -66,6 +70,16 @@ public class RollingMachineBlockEntity extends BlockEntity implements MenuProvid
                 return 2;
             }
         };
+    }
+
+    public boolean hasCigaretteInOutput() {
+        return itemHandler.getStackInSlot(4).getItem() == ModItems.CIGARETTE.get();
+    }
+
+    public void setHandler(ItemStackHandler itemStackHandler) {
+        for (int i = 0; i < itemStackHandler.getSlots(); i++) {
+            itemHandler.setStackInSlot(i, itemStackHandler.getStackInSlot(i));
+        }
     }
 
     @Override

@@ -5,6 +5,7 @@ import com.mundobachata.mineborium.block.ModBlocks;
 import com.mundobachata.mineborium.block.entity.ModBlockEntities;
 import com.mundobachata.mineborium.entity.ModEntityTypes;
 import com.mundobachata.mineborium.entity.renderer.MarlboriumArrowRenderer;
+import com.mundobachata.mineborium.entity.renderer.RollingMachineBlockEntityRenderer;
 import com.mundobachata.mineborium.item.ModCreativeModeTabs;
 import com.mundobachata.mineborium.item.ModItems;
 import com.mundobachata.mineborium.networking.ModNetworking;
@@ -130,6 +131,12 @@ public class Mineborium {
         public static void onClientSetup(EntityRenderersEvent.RegisterRenderers event) {
             event.registerEntityRenderer(ModEntityTypes.MARLBORIUM_ARROW.get(),
                     MarlboriumArrowRenderer::new);
+        }
+
+        @SubscribeEvent
+        public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(ModBlockEntities.ROLLING_MACHINE.get(),
+                    RollingMachineBlockEntityRenderer::new);
         }
     }
 
