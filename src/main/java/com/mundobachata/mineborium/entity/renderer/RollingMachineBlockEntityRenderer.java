@@ -37,7 +37,7 @@ public class RollingMachineBlockEntityRenderer implements BlockEntityRenderer<Ro
         poseStack.scale(1.0f, 1.0f, 1.0f);
 
         float xTranslation = 0.0f;
-        float yTranslation = -0.075f;
+        float yTranslation = -0.010f;
         float zTranslation = 0.0f;
 
         switch(blockEntity.getBlockState().getValue(RollingMachineBlock.FACING)) {
