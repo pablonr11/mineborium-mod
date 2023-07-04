@@ -35,7 +35,7 @@ public class RollingMachineMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(handler, 0, 8, 35));
             this.addSlot(new SlotItemHandler(handler, 1, 44, 35));
             this.addSlot(new SlotItemHandler(handler, 2, 26, 17));
-            this.addSlot(new SlotItemHandler(handler, 3, 26, 52));
+            this.addSlot(new SlotItemHandler(handler, 3, 26, 53));
             this.addSlot(new SlotItemHandler(handler, 4, 134, 35));
         });
 
