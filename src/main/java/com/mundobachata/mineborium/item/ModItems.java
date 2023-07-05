@@ -2,6 +2,7 @@ package com.mundobachata.mineborium.item;
 
 import com.mundobachata.mineborium.Mineborium;
 import com.mundobachata.mineborium.item.custom.CigaretteItem;
+import com.mundobachata.mineborium.item.custom.CigaretteStewItem;
 import com.mundobachata.mineborium.item.custom.MarlboriumArrowItem;
 import com.mundobachata.mineborium.item.custom.tier.MarlboriumTier;
 import net.minecraft.world.item.*;
@@ -37,6 +38,10 @@ public class ModItems {
             () -> new ShovelItem(new MarlboriumTier(), 1.5F, -2.9F, new Item.Properties()));
     public static final RegistryObject<Item> MARLBORIUM_HOE = ITEMS.register("marlborium_hoe",
             () -> new HoeItem(new MarlboriumTier(), -2, 0.0F, new Item.Properties()));
+    public static final RegistryObject<Item> CIGARETTE_STEW = ITEMS.register("cigarette_stew",
+            () -> new CigaretteStewItem(new Item.Properties()));
+
+    // This is probably bullshit
     public static final RegistryObject<Item> CIGARETTE_ENTITY_ITEM = ITEMS.register("cigarette_entity_item",
             () -> new Item(new Item.Properties()));
 

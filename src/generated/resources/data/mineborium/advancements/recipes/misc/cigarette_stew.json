@@ -1,0 +1,73 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bowl": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:bowl"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_brown_mushroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:brown_mushroom"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cigarette": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mineborium:cigarette"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_red_mushroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:red_mushroom"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mineborium:cigarette_stew"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_cigarette",
+      "has_red_mushroom",
+      "has_brown_mushroom",
+      "has_bowl",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mineborium:cigarette_stew"
+    ]
+  }
+}

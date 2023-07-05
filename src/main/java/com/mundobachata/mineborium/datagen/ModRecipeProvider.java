@@ -9,6 +9,7 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
 import javax.annotation.Nullable;
@@ -106,6 +107,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         nineBlockStorageRecipes(consumer, RecipeCategory.MISC, ModItems.CIGARETTE.get(),
                 RecipeCategory.MISC, ModBlocks.PACK_OF_CIGARETTES_BLOCK.get(), "cigarette2",
                 null, "pack_of_cigarettes_block", null);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CIGARETTE_STEW.get())
+                .requires(Blocks.BROWN_MUSHROOM).requires(Blocks.RED_MUSHROOM).requires(Items.BOWL)
+                .requires(ModItems.CIGARETTE.get())
+                .unlockedBy("has_cigarette", has(ModItems.CIGARETTE.get()))
+                .unlockedBy("has_red_mushroom", has(Blocks.RED_MUSHROOM))
+                .unlockedBy("has_brown_mushroom", has(Blocks.BROWN_MUSHROOM))
+                .unlockedBy("has_bowl", has(Items.BOWL))
+                .save(consumer);
     }
 
     protected static void twoByTwoPacker(Consumer<FinishedRecipe> consumer, RecipeCategory recipeCategory, ItemLike itemLike, ItemLike itemLike1) {
