@@ -68,6 +68,7 @@ public class Mineborium {
         if(event.getTab() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.MARLBORIUM_BLOCK);
             event.accept(ModBlocks.MARLBORIUM_DRIED_BLOCK);
+            event.accept(ModBlocks.PACK_OF_CIGARETTES_BLOCK);
         }
 
         if(event.getTab() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
@@ -102,11 +103,15 @@ public class Mineborium {
         //Mod specific tab
 
         if(event.getTab() == ModCreativeModeTabs.MINEBORIUM_TAB) {
+            // Blocks
             event.accept(ModBlocks.MARLBORIUM_ORE_BLOCK);
             event.accept(ModBlocks.DEEPSLATE_MARLBORIUM_ORE_BLOCK);
             event.accept(ModBlocks.MARLBORIUM_BLOCK);
             event.accept(ModBlocks.MARLBORIUM_DRIED_BLOCK);
             event.accept(ModBlocks.ROLLING_MACHINE_BLOCK);
+            event.accept(ModBlocks.PACK_OF_CIGARETTES_BLOCK);
+
+            // Items
             event.accept(ModItems.CIGARETTE);
             event.accept(ModItems.MARLBORIUM_NUGGET);
             event.accept(ModItems.MARLBORIUM);

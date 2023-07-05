@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "north": "mineborium:block/pack_of_cigarettes_front",
+    "east": "mineborium:block/pack_of_cigarettes_side",
+    "west": "mineborium:block/pack_of_cigarettes_side",
+    "up": "mineborium:block/pack_of_cigarettes_top",
+    "down": "mineborium:block/pack_of_cigarettes_bottom",
+    "south": "mineborium:block/pack_of_cigarettes_back",
+    "particle": "mineborium:block/pack_of_cigarettes_front"
+  }
+}

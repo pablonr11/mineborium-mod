@@ -1,5 +1,6 @@
-// 1.19.4	2023-07-03T21:25:15.0578054	Recipes
+// 1.19.4	2023-07-05T16:49:58.8559827	Recipes
 fceb9c588006013972f04b49eabe872017892f14 data/mineborium/advancements/recipes/misc/cigarette.json
+4c7794a3c55909ec4a8d3275c9381cd927918c4a data/mineborium/advancements/recipes/misc/cigarette2.json
 e12765fcf32567eccd9c8a4a1ca3782229a276f0 data/mineborium/advancements/recipes/misc/cigarette_filter.json
 7f6696f07e22051a4b5b4027bacf584f4e249fd2 data/mineborium/advancements/recipes/misc/compact_marlborium_block.json
 9ea4cd71d32b2f2f8b15b9d5413f0a2c2e75511c data/mineborium/advancements/recipes/misc/marlborium.json
@@ -10,7 +11,9 @@ eb648ccaf08a8fb4646e4462be6ebfcd45766be0 data/mineborium/advancements/recipes/mi
 16741a42ae458eab0e9b9a0c9b5820a183672e1c data/mineborium/advancements/recipes/misc/marlborium_pickaxe.json
 2c5641bcc8dda4f14031aaa3d5e502c3bc8b1d7b data/mineborium/advancements/recipes/misc/marlborium_shovel.json
 1fcb6470ef256ab2419e27ae86fa946d7ac60c4e data/mineborium/advancements/recipes/misc/marlborium_sword.json
+9839a04937e619d2e661ed8a42a9557b612c1f18 data/mineborium/advancements/recipes/misc/pack_of_cigarettes_block.json
 1f64e0c6ac943d93c9185fabc9e0c3f96e712954 data/mineborium/recipes/cigarette.json
+cbf71d143bf92a0b2abc49c9c1d982d86e88e7ce data/mineborium/recipes/cigarette2.json
 e2ba4364242133a831ab90c125c1fa20ffcb2892 data/mineborium/recipes/cigarette_filter.json
 135e4f87687a3c16535de91cbf183ed638da8f56 data/mineborium/recipes/compact_marlborium_block.json
 52e7ae20c337d7ef204a8355de254f84895faa70 data/mineborium/recipes/marlborium.json
@@ -21,5 +24,6 @@ e2ba4364242133a831ab90c125c1fa20ffcb2892 data/mineborium/recipes/cigarette_filte
 b422c01f5a617222ee69516d1b6313d3c7eab663 data/mineborium/recipes/marlborium_pickaxe.json
 3f3c9659c95bec43e3e2926cd547be3f141e5df2 data/mineborium/recipes/marlborium_shovel.json
 934a6cfda7ed1dbaf15202d96762bdc3e5e3214a data/mineborium/recipes/marlborium_sword.json
+f0b3ec25ed35219e8a1e4f643fa79aa3f18f50f1 data/mineborium/recipes/pack_of_cigarettes_block.json
 3e0e4f9f4caaa86f053cbaa4f1abb36a622c2ada data/minecraft/advancements/recipes/misc/rolling_paper_from_paper.json
 e69be85cc82fd690ee84ff9a60ce2b456dc1849a data/minecraft/recipes/rolling_paper_from_paper.json

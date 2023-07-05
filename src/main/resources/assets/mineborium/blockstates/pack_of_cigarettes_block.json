@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "mineborium:block/pack_of_cigarettes_block",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "mineborium:block/pack_of_cigarettes_block"
+    },
+    "facing=south": {
+      "model": "mineborium:block/pack_of_cigarettes_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mineborium:block/pack_of_cigarettes_block",
+      "y": 270
+    }
+  }
+}

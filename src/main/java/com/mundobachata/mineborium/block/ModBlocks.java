@@ -1,10 +1,7 @@
 package com.mundobachata.mineborium.block;
 
 import com.mundobachata.mineborium.Mineborium;
-import com.mundobachata.mineborium.block.custom.MarlboriumOreBlock;
-import com.mundobachata.mineborium.block.custom.RollingMachineBlock;
-import com.mundobachata.mineborium.block.custom.WeatheringMarlborium;
-import com.mundobachata.mineborium.block.custom.WeatheringMarlboriumFullBlock;
+import com.mundobachata.mineborium.block.custom.*;
 import com.mundobachata.mineborium.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -51,6 +48,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> ROLLING_MACHINE_BLOCK = registerBlock("rolling_machine_block",
             () -> new RollingMachineBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()
                     .strength(1.0F)));
+
+    public static final RegistryObject<Block> PACK_OF_CIGARETTES_BLOCK = registerBlock("pack_of_cigarettes_block",
+            () -> new PackOfCigarettesBlock(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(1.0F)
+                    .sound(SoundType.MOSS)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

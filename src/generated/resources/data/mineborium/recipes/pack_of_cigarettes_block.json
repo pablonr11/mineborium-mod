@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mineborium:pack_of_cigarettes_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "mineborium:cigarette"
+  }
+}

@@ -102,6 +102,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" S")
                 .unlockedBy("has_compact_marlborium_block", inventoryTrigger(ItemPredicate.Builder.item().of(ModBlocks.MARLBORIUM_BLOCK.get()).build()))
                 .save(consumer);
+
+        nineBlockStorageRecipes(consumer, RecipeCategory.MISC, ModItems.CIGARETTE.get(),
+                RecipeCategory.MISC, ModBlocks.PACK_OF_CIGARETTES_BLOCK.get(), "cigarette2",
+                null, "pack_of_cigarettes_block", null);
     }
 
     protected static void twoByTwoPacker(Consumer<FinishedRecipe> consumer, RecipeCategory recipeCategory, ItemLike itemLike, ItemLike itemLike1) {

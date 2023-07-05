@@ -31,6 +31,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.MARLBORIUM_BLOCK.get());
         dropSelf(ModBlocks.MARLBORIUM_DRIED_BLOCK.get());
         dropSelf(ModBlocks.ROLLING_MACHINE_BLOCK.get());
+        dropSelf(ModBlocks.PACK_OF_CIGARETTES_BLOCK.get());
     }
 
     @Override

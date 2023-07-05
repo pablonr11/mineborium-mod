@@ -1,6 +1,7 @@
-// 1.19.4	2023-06-30T13:07:09.8157565	Loot Tables
+// 1.19.4	2023-07-05T16:49:58.8549826	Loot Tables
 23ac107ac68a80a0bf87089313571127127c6e08 data/mineborium/loot_tables/blocks/compact_marlborium_block.json
 484a10d90794e5cfd38197eb10e0ed41e8d18a61 data/mineborium/loot_tables/blocks/deepslate_marlborium_ore_block.json
 cdf12a0c05f6488ffa388dfa7c2d71f505f034a7 data/mineborium/loot_tables/blocks/dry_compact_marlborium_block.json
 faa46eb6a0fcbbbc134131240c415ca6bef766e5 data/mineborium/loot_tables/blocks/marlborium_ore_block.json
+eb13bf3a698a7f618ef6202b5971ca51d60d0123 data/mineborium/loot_tables/blocks/pack_of_cigarettes_block.json
 c3e46229e12df3d6b189d32442ddcc594114dde5 data/mineborium/loot_tables/blocks/rolling_machine_block.json
