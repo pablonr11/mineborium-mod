@@ -30,7 +30,7 @@ import org.slf4j.Logger;
 public class Mineborium {
     public static final String MOD_ID = "mineborium";
 
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public Mineborium() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
