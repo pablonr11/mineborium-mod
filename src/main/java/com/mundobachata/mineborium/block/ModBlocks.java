@@ -52,7 +52,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> PACK_OF_CIGARETTES_BLOCK = registerBlock("pack_of_cigarettes_block",
             () -> new PackOfCigarettesBlock(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(1.0F)
-                    .sound(SoundType.MOSS)));
+                    .sound(SoundType.CANDLE)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
