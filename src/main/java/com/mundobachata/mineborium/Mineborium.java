@@ -5,7 +5,7 @@ import com.mundobachata.mineborium.block.ModBlocks;
 import com.mundobachata.mineborium.block.entity.ModBlockEntities;
 import com.mundobachata.mineborium.entity.ModEntityTypes;
 import com.mundobachata.mineborium.entity.renderer.MarlboriumArrowRenderer;
-import com.mundobachata.mineborium.entity.renderer.RollingMachineBlockEntityRenderer;
+import com.mundobachata.mineborium.block.entity.renderer.RollingMachineBlockEntityRenderer;
 import com.mundobachata.mineborium.item.ModCreativeModeTabs;
 import com.mundobachata.mineborium.item.ModItems;
 import com.mundobachata.mineborium.networking.ModNetworking;

@@ -1,4 +1,4 @@
-package com.mundobachata.mineborium.entity.renderer;
+package com.mundobachata.mineborium.block.entity.renderer;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;

@@ -1,5 +1,6 @@
 package com.mundobachata.mineborium.block.entity;
 
+import com.mundobachata.mineborium.block.custom.RollingMachineBlock;
 import com.mundobachata.mineborium.item.ModItems;
 import com.mundobachata.mineborium.networking.ModNetworking;
 import com.mundobachata.mineborium.networking.packet.ItemStackSyncS2CPacket;
@@ -27,6 +28,8 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Map;
+
 public class RollingMachineBlockEntity extends BlockEntity implements MenuProvider {
     public static final int NUMBER_OF_SLOTS = 5;
     private final ItemStackHandler itemHandler = new ItemStackHandler(NUMBER_OF_SLOTS) {
@@ -37,9 +40,33 @@ public class RollingMachineBlockEntity extends BlockEntity implements MenuProvid
                 ModNetworking.sendToClient(new ItemStackSyncS2CPacket(this, worldPosition));
             }
         }
+
+        @Override
+        public boolean isItemValid(int slot, @NotNull ItemStack stack) {
+            return switch (slot) {
+                case 0 -> stack.getItem() == ModItems.CIGARETTE_FILTER.get();
+                case 1 -> stack.getItem() == ModItems.MARLBORIUM.get();
+                case 2, 3 -> stack.getItem() == ModItems.ROLLING_PAPER.get();
+                case 4 -> false;
+                default -> super.isItemValid(slot, stack);
+            };
+        }
     };
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
+    private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
+            Map.of(Direction.DOWN, LazyOptional.of(() -> new WrappedHandler(itemHandler, (i) -> i == 4,
+                            (i, s) -> false)),
+                    Direction.UP, LazyOptional.of(() -> new WrappedHandler(itemHandler, (i) -> false,
+                            (i, s) -> itemHandler.isItemValid(1, s))),
+                    Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (i) -> false,
+                            (i, s) -> itemHandler.isItemValid(0, s))),
+                    Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (i) -> false,
+                            (i, s) -> false)),
+                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (i) -> false,
+                            (i, s) -> itemHandler.isItemValid(2, s))),
+                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (i) -> false,
+                            (i, s) -> itemHandler.isItemValid(3, s))));
 
     protected final ContainerData data;
     private int progress = 0;
@@ -96,7 +123,25 @@ public class RollingMachineBlockEntity extends BlockEntity implements MenuProvid
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
         if(cap == ForgeCapabilities.ITEM_HANDLER) {
-            return lazyItemHandler.cast();
+            if(side == null) {
+                return lazyItemHandler.cast();
+            }
+
+            if (directionWrappedHandlerMap.containsKey(side)) {
+                Direction localDir = this.getBlockState().getValue(RollingMachineBlock.FACING);
+
+                if(side == Direction.UP || side == Direction.DOWN) {
+                    return directionWrappedHandlerMap.get(side).cast();
+                }
+
+                return switch (localDir) {
+                    default -> directionWrappedHandlerMap.get(side.getOpposite()).cast();
+                    case EAST -> directionWrappedHandlerMap.get(side.getClockWise()).cast();
+                    case SOUTH -> directionWrappedHandlerMap.get(side).cast();
+                    case WEST -> directionWrappedHandlerMap.get(side.getCounterClockWise()).cast();
+                };
+            }
+
         }
 
         return super.getCapability(cap, side);
