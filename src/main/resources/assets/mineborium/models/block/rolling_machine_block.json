@@ -8,5 +8,12 @@
     "down": "mineborium:block/rolling_machine_bottom",
     "south": "mineborium:block/rolling_machine_back",
     "particle": "mineborium:block/rolling_machine_front"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [ 0, 180, 0 ],
+      "translation": [ 0, 0, 0 ],
+      "scale": [ 0.40, 0.40, 0.40 ]
+    }
   }
 }

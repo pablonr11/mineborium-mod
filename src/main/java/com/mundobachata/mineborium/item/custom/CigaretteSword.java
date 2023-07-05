@@ -1,23 +1,24 @@
 package com.mundobachata.mineborium.item.custom;
 
-import com.mojang.math.Axis;
+import com.mundobachata.mineborium.item.custom.tier.CigaretteTier;
 import com.mundobachata.mineborium.networking.ModNetworking;
 import com.mundobachata.mineborium.networking.packet.SmokeC2SPacket;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
-public class CigaretteItem extends Item {
-
-    public CigaretteItem(Properties properties) {
-        super(properties.food(getCustomFoodProperties()));
+public class CigaretteSword extends SwordItem {
+    public CigaretteSword(int damage, float attackingSpeed, Properties properties) {
+        super(new CigaretteTier(), damage, attackingSpeed, properties);
     }
 
     @Override
@@ -65,8 +66,10 @@ public class CigaretteItem extends Item {
         return 64;
     }
 
-    public static FoodProperties getCustomFoodProperties() {
-        return new FoodProperties.Builder().alwaysEat().saturationMod(3.5F).build();
+    @Override
+    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        target.addEffect(new MobEffectInstance(MobEffects.WITHER, 200, 1), attacker);
+        target.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200), attacker);
+        return super.hurtEnemy(stack, target, attacker);
     }
 }
-
