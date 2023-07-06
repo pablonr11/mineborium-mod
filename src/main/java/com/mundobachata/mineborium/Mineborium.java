@@ -8,6 +8,7 @@ import com.mundobachata.mineborium.entity.renderer.MarlboriumArrowRenderer;
 import com.mundobachata.mineborium.block.entity.renderer.RollingMachineBlockEntityRenderer;
 import com.mundobachata.mineborium.item.ModCreativeModeTabs;
 import com.mundobachata.mineborium.item.ModItems;
+import com.mundobachata.mineborium.loot.ModLootModifiers;
 import com.mundobachata.mineborium.networking.ModNetworking;
 import com.mundobachata.mineborium.screen.ModMenuTypes;
 import com.mundobachata.mineborium.screen.RollingMachineScreen;
@@ -41,6 +42,7 @@ public class Mineborium {
         ModMenuTypes.register(modEventBus);
         ModVillagers.register(modEventBus);
         ModEntityTypes.register(modEventBus);
+        ModLootModifiers.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);

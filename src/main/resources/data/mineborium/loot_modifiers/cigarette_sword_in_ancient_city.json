@@ -1,0 +1,11 @@
+{
+  "type": "mineborium:add_cigarette_sword_to_structures",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/ancient_city"
+    }
+  ],
+  "item": "mineborium:cigarette_sword",
+  "chance": 0.06
+}
