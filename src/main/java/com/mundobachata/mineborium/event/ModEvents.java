@@ -83,11 +83,31 @@ public class ModEvents {
     public static void addCustomTrades(VillagerTradesEvent event) {
         if(event.getType() == ModVillagers.SMOKE_SHOP_ASSISTANT.get()) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-            ItemStack stack = new ItemStack(ModItems.MARLBORIUM_NUGGET.get(), 32);
-            int villagerLevel = 1;
 
-            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(stack,
-                    new ItemStack(Items.EMERALD, 1), 10, 4, 0.02F));
+            trades.get(1).add((trader, rand) -> new MerchantOffer(new ItemStack(ModItems.MARLBORIUM_NUGGET.get(), 32),
+                    new ItemStack(Items.EMERALD, 1), 16, 2, 0.05F));
+
+            trades.get(2).add((trader, rand) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1),
+                    new ItemStack(ModItems.CIGARETTE_STEW.get(), 1), 12, 15, 0.05F));
+
+            trades.get(3).add((trader, rand) -> new MerchantOffer(new ItemStack(Items.EMERALD, 2),
+                    new ItemStack(Items.ARROW, 5),
+                    new ItemStack(ModItems.MARLBORIUM_ARROW.get(), 5), 12, 30, 0.05F));
+
+            trades.get(4).add((trader, rand) -> new MerchantOffer(new ItemStack(Items.EMERALD, rand.nextInt(9, 24)),
+                    new ItemStack(ModItems.MARLBORIUM_SWORD.get(), 1), 3, 30, 0.2F));
+
+            trades.get(4).add((trader, rand) -> new MerchantOffer(new ItemStack(Items.EMERALD, rand.nextInt(8, 22)),
+                    new ItemStack(ModItems.MARLBORIUM_AXE.get(), 1), 3, 30, 0.2F));
+
+            trades.get(4).add((trader, rand) -> new MerchantOffer(new ItemStack(Items.EMERALD, rand.nextInt(8, 25)),
+                    new ItemStack(ModItems.MARLBORIUM_PICKAXE.get(), 1), 3, 30, 0.2F));
+
+            trades.get(4).add((trader, rand) -> new MerchantOffer(new ItemStack(Items.EMERALD, rand.nextInt(9, 23)),
+                    new ItemStack(ModItems.MARLBORIUM_SHOVEL.get(), 1), 3, 30, 0.2F));
+
+            trades.get(4).add((trader, rand) -> new MerchantOffer(new ItemStack(Items.EMERALD, 3),
+                    new ItemStack(ModItems.MARLBORIUM_SHOVEL.get(), 1), 3, 30, 0.2F));
         }
     }
 }
