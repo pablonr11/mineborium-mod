@@ -90,23 +90,23 @@ public class ModEvents {
             trades.get(2).add((trader, rand) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1),
                     new ItemStack(ModItems.CIGARETTE_STEW.get(), 1), 12, 15, 0.05F));
 
-            trades.get(3).add((trader, rand) -> new MerchantOffer(new ItemStack(Items.EMERALD, 2),
+            trades.get(2).add((trader, rand) -> new MerchantOffer(new ItemStack(Items.EMERALD, 3),
+                    new ItemStack(ModItems.MARLBORIUM_HOE.get(), 1), 3, 10, 0.2F));
+
+            trades.get(3).add((trader, rand) -> new MerchantOffer(new ItemStack(Items.EMERALD, 4),
                     new ItemStack(Items.ARROW, 5),
                     new ItemStack(ModItems.MARLBORIUM_ARROW.get(), 5), 12, 30, 0.05F));
 
-            trades.get(4).add((trader, rand) -> new MerchantOffer(new ItemStack(Items.EMERALD, rand.nextInt(9, 24)),
+            trades.get(4).add((trader, rand) -> new MerchantOffer(new ItemStack(Items.EMERALD, rand.nextInt(7, 21)),
                     new ItemStack(ModItems.MARLBORIUM_SWORD.get(), 1), 3, 30, 0.2F));
 
-            trades.get(4).add((trader, rand) -> new MerchantOffer(new ItemStack(Items.EMERALD, rand.nextInt(8, 22)),
+            trades.get(4).add((trader, rand) -> new MerchantOffer(new ItemStack(Items.EMERALD, rand.nextInt(6, 20)),
                     new ItemStack(ModItems.MARLBORIUM_AXE.get(), 1), 3, 30, 0.2F));
 
-            trades.get(4).add((trader, rand) -> new MerchantOffer(new ItemStack(Items.EMERALD, rand.nextInt(8, 25)),
+            trades.get(4).add((trader, rand) -> new MerchantOffer(new ItemStack(Items.EMERALD, rand.nextInt(8, 22)),
                     new ItemStack(ModItems.MARLBORIUM_PICKAXE.get(), 1), 3, 30, 0.2F));
 
-            trades.get(4).add((trader, rand) -> new MerchantOffer(new ItemStack(Items.EMERALD, rand.nextInt(9, 23)),
-                    new ItemStack(ModItems.MARLBORIUM_SHOVEL.get(), 1), 3, 30, 0.2F));
-
-            trades.get(4).add((trader, rand) -> new MerchantOffer(new ItemStack(Items.EMERALD, 3),
+            trades.get(4).add((trader, rand) -> new MerchantOffer(new ItemStack(Items.EMERALD, rand.nextInt(7, 21)),
                     new ItemStack(ModItems.MARLBORIUM_SHOVEL.get(), 1), 3, 30, 0.2F));
         }
     }
