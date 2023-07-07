@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "mineborium:pack_of_cigarettes_block"
+    },
+    "C": {
+      "item": "minecraft:black_carpet"
+    },
+    "D": {
+      "item": "minecraft:dispenser"
+    }
+  },
+  "pattern": [
+    "#",
+    "D",
+    "C"
+  ],
+  "result": {
+    "item": "mineborium:rolling_machine_block"
+  },
+  "show_notification": true
+}

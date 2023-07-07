@@ -116,6 +116,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_brown_mushroom", has(Blocks.BROWN_MUSHROOM))
                 .unlockedBy("has_bowl", has(Items.BOWL))
                 .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.ROLLING_MACHINE_BLOCK.get())
+                .define('#', ModBlocks.PACK_OF_CIGARETTES_BLOCK.get())
+                .define('D', Blocks.DISPENSER)
+                .define('C', Blocks.BLACK_CARPET)
+                .pattern("#")
+                .pattern("D")
+                .pattern("C")
+                .unlockedBy("has_pack_of_cigarettes_block", has(ModBlocks.PACK_OF_CIGARETTES_BLOCK.get()))
+                .unlockedBy("has_dispenser", has(Blocks.DISPENSER))
+                .unlockedBy("has_black_carpet", has(Blocks.BLACK_CARPET))
+                .save(consumer);
     }
 
     protected static void twoByTwoPacker(Consumer<FinishedRecipe> consumer, RecipeCategory recipeCategory, ItemLike itemLike, ItemLike itemLike1) {
