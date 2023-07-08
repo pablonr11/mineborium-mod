@@ -68,8 +68,6 @@ public class CigaretteSword extends SwordItem {
 
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        target.addEffect(new MobEffectInstance(MobEffects.WITHER, 200, 1), attacker);
-        target.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200), attacker);
         return super.hurtEnemy(stack, target, attacker);
     }
 }

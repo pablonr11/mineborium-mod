@@ -10,6 +10,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -18,6 +20,7 @@ import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -108,6 +111,18 @@ public class ModEvents {
 
             trades.get(4).add((trader, rand) -> new MerchantOffer(new ItemStack(Items.EMERALD, rand.nextInt(7, 21)),
                     new ItemStack(ModItems.MARLBORIUM_SHOVEL.get(), 1), 3, 30, 0.2F));
+        }
+    }
+
+    @SubscribeEvent
+    public static void onLivingHurt(LivingHurtEvent event) {
+        /* This logic could go in CigaretteSword#hurtEnemy but then if an enemy with CanPickUpLoot hits a player
+        * the effects is not applied to the player.*/
+        LivingEntity attacker = (LivingEntity) event.getSource().getEntity();
+        LivingEntity target = event.getEntity();
+        if(attacker != null && target != null && attacker.getMainHandItem().getItem() == ModItems.CIGARETTE_SWORD.get()) {
+            target.addEffect(new MobEffectInstance(MobEffects.WITHER, 200, 1), attacker);
+            target.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200), attacker);
         }
     }
 }
