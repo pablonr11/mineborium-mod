@@ -77,11 +77,13 @@ public class RollingMachineBlock extends BaseEntityBlock {
             BlockEntity entity = level.getBlockEntity(blockPos);
             if(entity instanceof RollingMachineBlockEntity) {
                 NetworkHooks.openScreen(((ServerPlayer) player), (RollingMachineBlockEntity)entity, blockPos);
+                return InteractionResult.CONSUME;
             } else {
                 throw new IllegalStateException("Our Container provider is missing");
             }
+        } else {
+            return InteractionResult.SUCCESS;
         }
-        return super.use(blockState, level, blockPos, player, interactionHand, hit);
     }
 
     @Nullable
