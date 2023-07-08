@@ -18,8 +18,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> MARLBORIUM_NUGGET = ITEMS.register("marlborium_nugget",
             () -> new Item(new Item.Properties()));
-
     public static final RegistryObject<Item> MARLBORIUM = ITEMS.register("marlborium",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DRY_MARLBORIUM = ITEMS.register("dry_marlborium",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CIGARETTE_FILTER = ITEMS.register("cigarette_filter",
             () -> new Item(new Item.Properties()));

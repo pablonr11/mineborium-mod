@@ -128,6 +128,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_dispenser", has(Blocks.DISPENSER))
                 .unlockedBy("has_black_carpet", has(Blocks.BLACK_CARPET))
                 .save(consumer);
+
+        nineBlockStorageRecipes(consumer, RecipeCategory.MISC, ModItems.DRY_MARLBORIUM.get(),
+                RecipeCategory.MISC, ModBlocks.MARLBORIUM_DRIED_BLOCK.get(), "dry_marlborium",
+                null, "dry_compact_marlborium_block", null);
     }
 
     protected static void twoByTwoPacker(Consumer<FinishedRecipe> consumer, RecipeCategory recipeCategory, ItemLike itemLike, ItemLike itemLike1) {

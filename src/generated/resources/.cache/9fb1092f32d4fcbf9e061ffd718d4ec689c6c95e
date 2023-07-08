@@ -1,9 +1,11 @@
-// 1.19.4	2023-07-07T17:58:52.0596196	Recipes
+// 1.19.4	2023-07-08T17:58:34.646229	Recipes
 fceb9c588006013972f04b49eabe872017892f14 data/mineborium/advancements/recipes/misc/cigarette.json
 4c7794a3c55909ec4a8d3275c9381cd927918c4a data/mineborium/advancements/recipes/misc/cigarette2.json
 e12765fcf32567eccd9c8a4a1ca3782229a276f0 data/mineborium/advancements/recipes/misc/cigarette_filter.json
 ca932526b075bbeee018cf25eb60e6c6a170e8c5 data/mineborium/advancements/recipes/misc/cigarette_stew.json
 7f6696f07e22051a4b5b4027bacf584f4e249fd2 data/mineborium/advancements/recipes/misc/compact_marlborium_block.json
+6e5622c4423f86196675dc7bd1b941f8dbb96c6c data/mineborium/advancements/recipes/misc/dry_compact_marlborium_block.json
+03f55065cbe4c17f3f014cf118b0722cd0a2064e data/mineborium/advancements/recipes/misc/dry_marlborium.json
 9ea4cd71d32b2f2f8b15b9d5413f0a2c2e75511c data/mineborium/advancements/recipes/misc/marlborium.json
 c0b46b1ecafe5e4bfe95a77133bb8715da1d529b data/mineborium/advancements/recipes/misc/marlborium2.json
 318c02689c57c332ff8e0781166f396cc7289054 data/mineborium/advancements/recipes/misc/marlborium_arrow.json
@@ -19,6 +21,8 @@ cbf71d143bf92a0b2abc49c9c1d982d86e88e7ce data/mineborium/recipes/cigarette2.json
 e2ba4364242133a831ab90c125c1fa20ffcb2892 data/mineborium/recipes/cigarette_filter.json
 8e15f37133723805af2e7c7a9b32e46b4348be57 data/mineborium/recipes/cigarette_stew.json
 135e4f87687a3c16535de91cbf183ed638da8f56 data/mineborium/recipes/compact_marlborium_block.json
+f3e34f24b49438c4ae1fad50899adea0221aa70d data/mineborium/recipes/dry_compact_marlborium_block.json
+83f8ec548f14a64195196934ff85f58c9101b61c data/mineborium/recipes/dry_marlborium.json
 52e7ae20c337d7ef204a8355de254f84895faa70 data/mineborium/recipes/marlborium.json
 11b37135b20d116e6d4533f07433eb237d749de5 data/mineborium/recipes/marlborium2.json
 02a06933f42086bdc6dcc5b385ed167af5cfde4b data/mineborium/recipes/marlborium_arrow.json

@@ -22,6 +22,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CIGARETTE_FILTER);
         simpleItem(ModItems.MARLBORIUM_NUGGET);
         simpleItem(ModItems.MARLBORIUM);
+        simpleItem(ModItems.DRY_MARLBORIUM);
         simpleItem(ModItems.ROLLING_PAPER);
         simpleItem(ModItems.MARLBORIUM_ARROW);
         simpleItem(ModItems.CIGARETTE_STEW);
