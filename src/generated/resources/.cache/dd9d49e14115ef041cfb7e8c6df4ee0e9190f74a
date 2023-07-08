@@ -1,8 +1,9 @@
-// 1.19.4	2023-07-05T21:35:18.6389203	Item Models: mineborium
+// 1.19.4	2023-07-08T16:50:46.5729231	Item Models: mineborium
 0f93937af541de63fc6a03c60ffa8ac8a79efa5d assets/mineborium/models/item/cigarette.json
 101d01df0e9380f54b037ca39b3b2530d3aca1a9 assets/mineborium/models/item/cigarette_filter.json
 d188dbb7e289ab287218e59fbf482a4cd7888d76 assets/mineborium/models/item/cigarette_stew.json
 a23ff7844fed3b486ae98d9ff7f5a0c4ffcd4642 assets/mineborium/models/item/cigarette_sword.json
+59483dd1b579f77b9d9f7b5cede8d629c9a96c4b assets/mineborium/models/item/dry_cigarette.json
 ad300ec3d69fbcf3081ae9766cf760ece989c26a assets/mineborium/models/item/marlborium.json
 1b7b8497f0735ef0ad86d754cb0e31bf842de983 assets/mineborium/models/item/marlborium_arrow.json
 b172e778602aa63ff88a3a4266dd63178780b221 assets/mineborium/models/item/marlborium_axe.json

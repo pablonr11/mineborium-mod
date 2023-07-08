@@ -29,7 +29,7 @@ displayName="Mineborium mod" #mandatory
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="" #optional
 # A text field displayed in the mod UI
-credits="john lenon" #optional
+credits="john lenon & Romeo santos (aka Dankek & Alexmeister95)" #optional
 # A text field displayed in the mod UI
 authors="harry Potter & j03l1370" #optional
 # Display Test controls the display for your mod in the server connection screen

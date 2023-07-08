@@ -88,6 +88,7 @@ public class Mineborium {
 
         if(event.getTab() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(ModItems.CIGARETTE);
+            event.accept(ModItems.DRY_CIGARETTE);
             event.accept(ModItems.CIGARETTE_STEW);
         }
 
@@ -117,6 +118,7 @@ public class Mineborium {
 
             // Items
             event.accept(ModItems.CIGARETTE);
+            event.accept(ModItems.DRY_CIGARETTE);
             event.accept(ModItems.CIGARETTE_STEW);
             event.accept(ModItems.MARLBORIUM_NUGGET);
             event.accept(ModItems.MARLBORIUM);

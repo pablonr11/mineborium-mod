@@ -24,7 +24,9 @@ public class ModItems {
     public static final RegistryObject<Item> CIGARETTE_FILTER = ITEMS.register("cigarette_filter",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CIGARETTE = ITEMS.register("cigarette",
-            () -> new CigaretteItem(new Item.Properties()));
+            () -> new CigaretteItem(new Item.Properties(), false));
+    public static final RegistryObject<Item> DRY_CIGARETTE = ITEMS.register("dry_cigarette",
+            () -> new CigaretteItem(new Item.Properties(), true));
     public static final RegistryObject<Item> ROLLING_PAPER = ITEMS.register("rolling_paper",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MARLBORIUM_ARROW = ITEMS.register("marlborium_arrow",
@@ -42,7 +44,7 @@ public class ModItems {
     public static final RegistryObject<Item> CIGARETTE_STEW = ITEMS.register("cigarette_stew",
             () -> new CigaretteStewItem(new Item.Properties()));
     public static final RegistryObject<Item> CIGARETTE_SWORD = ITEMS.register("cigarette_sword",
-            () -> new CigaretteSword(3, -2.0F, new Item.Properties().rarity(Rarity.EPIC).food(CigaretteItem.getCustomFoodProperties())));
+            () -> new CigaretteSword(3, -2.0F, new Item.Properties().rarity(Rarity.EPIC).food(CigaretteItem.getCustomFoodProperties(false))));
 
     // This is probably bullshit
     public static final RegistryObject<Item> CIGARETTE_ENTITY_ITEM = ITEMS.register("cigarette_entity_item",

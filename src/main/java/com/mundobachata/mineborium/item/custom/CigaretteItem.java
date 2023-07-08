@@ -7,6 +7,8 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
@@ -16,8 +18,11 @@ import net.minecraft.world.level.Level;
 
 public class CigaretteItem extends Item {
 
-    public CigaretteItem(Properties properties) {
-        super(properties.food(getCustomFoodProperties()));
+    private boolean isDried;
+
+    public CigaretteItem(Properties properties, boolean isDried) {
+        super(properties.food(getCustomFoodProperties(isDried)));
+        this.isDried = isDried;
     }
 
     @Override
@@ -65,8 +70,14 @@ public class CigaretteItem extends Item {
         return 64;
     }
 
-    public static FoodProperties getCustomFoodProperties() {
-        return new FoodProperties.Builder().alwaysEat().saturationMod(3.5F).build();
+    public static FoodProperties getCustomFoodProperties(boolean isDried) {
+        FoodProperties.Builder foodPropertiesBuilder = new FoodProperties.Builder().alwaysEat().saturationMod(3.5F);
+
+        if(isDried) {
+            foodPropertiesBuilder.effect(() ->
+                    new MobEffectInstance(MobEffects.CONFUSION, 600, 0), 1.0F);
+        }
+        return foodPropertiesBuilder.build();
     }
 }
 
