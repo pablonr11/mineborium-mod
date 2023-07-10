@@ -1,6 +1,5 @@
 package com.mundobachata.mineborium.item.custom;
 
-import com.mojang.math.Axis;
 import com.mundobachata.mineborium.networking.ModNetworking;
 import com.mundobachata.mineborium.networking.packet.SmokeC2SPacket;
 import net.minecraft.core.Direction;
