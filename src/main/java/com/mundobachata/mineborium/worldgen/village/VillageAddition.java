@@ -77,23 +77,23 @@ public class VillageAddition {
         // Note, the resourcelocation is getting the pool files from the data folder. Not assets folder.
         addBuildingToPool(templatePoolRegistry, processorListRegistry,
                 new ResourceLocation("minecraft:village/plains/houses"),
-                "mineborium:plains_smoke_shop", 2);
+                "mineborium:plains_smoke_shop", 5);
 
-        //addBuildingToPool(templatePoolRegistry, processorListRegistry,
-        //        new ResourceLocation("minecraft:village/snowy/houses"),
-        //        "modid:structure_nbt_resourcelocation", 5);
-        //
-        //addBuildingToPool(templatePoolRegistry, processorListRegistry,
-        //        new ResourceLocation("minecraft:village/savanna/houses"),
-        //        "modid:structure_nbt_resourcelocation", 5);
-        //
-        //addBuildingToPool(templatePoolRegistry, processorListRegistry,
-        //        new ResourceLocation("minecraft:village/taiga/houses"),
-        //        "modid:structure_nbt_resourcelocation", 5);
-        //
-        //addBuildingToPool(templatePoolRegistry, processorListRegistry,
-        //        new ResourceLocation("minecraft:village/desert/houses"),
-        //        "modid:structure_nbt_resourcelocation", 5);
+        addBuildingToPool(templatePoolRegistry, processorListRegistry,
+                new ResourceLocation("minecraft:village/snowy/houses"),
+                "mineborium:snowy_smoke_shop", 7);
+
+        addBuildingToPool(templatePoolRegistry, processorListRegistry,
+                new ResourceLocation("minecraft:village/savanna/houses"),
+                "mineborium:savanna_smoke_shop", 6);
+
+        addBuildingToPool(templatePoolRegistry, processorListRegistry,
+                new ResourceLocation("minecraft:village/taiga/houses"),
+                "mineborium:taiga_smoke_shop", 8);
+
+        addBuildingToPool(templatePoolRegistry, processorListRegistry,
+                new ResourceLocation("minecraft:village/desert/houses"),
+                "mineborium:desert_smoke_shop", 12);
     }
 
 }
