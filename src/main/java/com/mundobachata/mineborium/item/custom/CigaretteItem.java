@@ -27,9 +27,8 @@ public class CigaretteItem extends Item {
 
     @Override
     public ItemStack finishUsingItem(ItemStack itemStack, Level level, LivingEntity livingEntity) {
-        if(!level.isClientSide()) {
+        if(level.isClientSide()) {
             ModNetworking.sendToServer(new SmokeC2SPacket());
-        } else {
             double x = livingEntity.getX();
             double y = livingEntity.getY();
             double z = livingEntity.getZ();
@@ -45,6 +44,7 @@ public class CigaretteItem extends Item {
             level.addParticle(ParticleTypes.SMOKE, x, y + 1.5D,
                     z, 0.0D, 0.0D, 0.0D);
         }
+
         return super.finishUsingItem(itemStack, level, livingEntity);
     }
 
