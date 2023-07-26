@@ -29,7 +29,6 @@ public class SmokeC2SPacket {
         context.enqueueWork(() -> {
             // This is server side
             ServerPlayer player = context.getSender();
-            ServerLevel level = player.getLevel();
 
             player.getCapability(PlayerAbstinenceProvider.PLAYER_ABSTINENCE).ifPresent(abstinence -> {
                 abstinence.setHasSmoked(true);

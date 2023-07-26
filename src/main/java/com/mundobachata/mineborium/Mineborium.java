@@ -18,7 +18,7 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -36,6 +36,7 @@ public class Mineborium {
     public Mineborium() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
@@ -53,33 +54,32 @@ public class Mineborium {
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
 //            ModNetworking.register();
-            ModVillagers.registerPOIs();
         });
         // This should work inside the event.enqueueWork Supplier, but it is not working in there so...
         ModNetworking.register();
     }
 
-    private void addCreative(CreativeModeTabEvent.BuildContents event) {
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
         //Blocks
 
-        if(event.getTab() == CreativeModeTabs.NATURAL_BLOCKS) {
+        if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModBlocks.MARLBORIUM_ORE_BLOCK);
             event.accept(ModBlocks.DEEPSLATE_MARLBORIUM_ORE_BLOCK);
         }
 
-        if(event.getTab() == CreativeModeTabs.BUILDING_BLOCKS) {
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.MARLBORIUM_BLOCK);
             event.accept(ModBlocks.MARLBORIUM_DRIED_BLOCK);
             event.accept(ModBlocks.PACK_OF_CIGARETTES_BLOCK);
         }
 
-        if(event.getTab() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(ModBlocks.ROLLING_MACHINE_BLOCK);
         }
 
         // Items
 
-        if(event.getTab() == CreativeModeTabs.INGREDIENTS) {
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.MARLBORIUM_NUGGET);
             event.accept(ModItems.MARLBORIUM);
             event.accept(ModItems.DRY_MARLBORIUM);
@@ -87,19 +87,19 @@ public class Mineborium {
             event.accept(ModItems.ROLLING_PAPER);
         }
 
-        if(event.getTab() == CreativeModeTabs.FOOD_AND_DRINKS) {
+        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(ModItems.CIGARETTE);
             event.accept(ModItems.DRY_CIGARETTE);
             event.accept(ModItems.CIGARETTE_STEW);
         }
 
-        if(event.getTab() == CreativeModeTabs.COMBAT) {
+        if(event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(ModItems.CIGARETTE_SWORD);
             event.accept(ModItems.MARLBORIUM_SWORD);
             event.accept(ModItems.MARLBORIUM_ARROW);
         }
 
-        if(event.getTab() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+        if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.MARLBORIUM_SHOVEL);
             event.accept(ModItems.MARLBORIUM_PICKAXE);
             event.accept(ModItems.MARLBORIUM_AXE);
@@ -108,7 +108,7 @@ public class Mineborium {
 
         //Mod specific tab
 
-        if(event.getTab() == ModCreativeModeTabs.MINEBORIUM_TAB) {
+        if(event.getTab() == ModCreativeModeTabs.MINEBORIUM_TAB.get()) {
             // Blocks
             event.accept(ModBlocks.MARLBORIUM_ORE_BLOCK);
             event.accept(ModBlocks.DEEPSLATE_MARLBORIUM_ORE_BLOCK);

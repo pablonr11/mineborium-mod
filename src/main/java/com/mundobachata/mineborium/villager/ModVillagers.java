@@ -31,15 +31,6 @@ public class ModVillagers {
                     x -> x.get() == ROLLING_MACHINE_BLOCK_POI.get(), ImmutableSet.of(), ImmutableSet.of(),
                     SoundEvents.VILLAGER_WORK_FARMER));
 
-    public static void registerPOIs() {
-        try {
-            ObfuscationReflectionHelper.findMethod(PoiType.class,
-                    "registerBlockStates", PoiTypes.class).invoke(null, ROLLING_MACHINE_BLOCK_POI.get());
-        } catch (InvocationTargetException | IllegalAccessException exception) {
-            exception.printStackTrace();
-        }
-    }
-
     public static void register(IEventBus eventBus) {
         POI_TYPES.register(eventBus);
         VILLAGER_PROFESSIONS.register(eventBus);
