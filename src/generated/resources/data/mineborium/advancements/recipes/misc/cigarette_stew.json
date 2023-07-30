@@ -69,5 +69,6 @@
     "recipes": [
       "mineborium:cigarette_stew"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

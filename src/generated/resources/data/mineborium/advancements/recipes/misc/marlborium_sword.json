@@ -30,5 +30,6 @@
     "recipes": [
       "mineborium:marlborium_sword"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

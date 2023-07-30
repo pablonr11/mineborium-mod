@@ -14,6 +14,8 @@ import com.mundobachata.mineborium.screen.ModMenuTypes;
 import com.mundobachata.mineborium.screen.RollingMachineScreen;
 import com.mundobachata.mineborium.villager.ModVillagers;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -140,6 +142,26 @@ public class Mineborium {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            event.enqueueWork(() -> {
+                ItemProperties.register(ModItems.CIGARETTE.get(),
+                        new ResourceLocation(Mineborium.MOD_ID, "smoke"), (stack, level, living, id) -> {
+                            if(living == null) {
+                                return 0.0F;
+                            }
+
+                            return living.isUsingItem() && living.getUseItem() == stack ?
+                                    (float)(stack.getUseDuration() - living.getUseItemRemainingTicks()) / (float)stack.getUseDuration() : 0.0F;
+                        });
+
+                ItemProperties.register(ModItems.CIGARETTE.get(),
+                        new ResourceLocation(Mineborium.MOD_ID, "smoking"), (stack, level, living, id) -> {
+                            if(living == null) {
+                                return 0.0F;
+                            }
+
+                            return living.isUsingItem() && living.getUseItem() == stack ? 1.0F : 0.0F;
+                        });
+            });
             MenuScreens.register(ModMenuTypes.ROLLING_MACHINE_MENU.get(), RollingMachineScreen::new);
         }
 

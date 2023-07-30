@@ -30,5 +30,6 @@
     "recipes": [
       "mineborium:pack_of_cigarettes_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

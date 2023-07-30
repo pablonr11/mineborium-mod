@@ -1,0 +1,12 @@
+{
+  "parent": "mineborium:item/cigarette",
+  "textures": {
+    "layer0": "mineborium:item/cigarette3"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [ 100, 0, -130 ],
+      "translation": [ -8, 0, -5 ]
+    }
+  }
+}

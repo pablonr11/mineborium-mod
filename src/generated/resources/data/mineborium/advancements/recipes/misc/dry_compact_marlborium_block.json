@@ -30,5 +30,6 @@
     "recipes": [
       "mineborium:dry_compact_marlborium_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

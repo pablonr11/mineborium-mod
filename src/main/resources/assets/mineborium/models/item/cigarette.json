@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mineborium:item/cigarette"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "mineborium:smoking": 1
+      },
+      "model": "mineborium:item/cigarette_in_use"
+    },
+    {
+      "predicate": {
+        "mineborium:smoking": 1,
+        "mineborium:smoke": 0.25
+      },
+      "model": "mineborium:item/cigarette1"
+    },
+    {
+      "predicate": {
+        "mineborium:smoking": 1,
+        "mineborium:smoke": 0.58
+      },
+      "model": "mineborium:item/cigarette2"
+    },
+    {
+      "predicate": {
+        "mineborium:smoking": 1,
+        "mineborium:smoke": 0.85
+      },
+      "model": "mineborium:item/cigarette3"
+    }
+  ]
+}

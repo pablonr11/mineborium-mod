@@ -30,5 +30,6 @@
     "recipes": [
       "mineborium:cigarette"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
