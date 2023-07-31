@@ -6,9 +6,13 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -22,6 +26,20 @@ public class CigaretteItem extends Item {
     public CigaretteItem(Properties properties, boolean isDried) {
         super(properties.food(getCustomFoodProperties(isDried)));
         this.isDried = isDried;
+    }
+
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+        ItemStack itemStack = player.getItemInHand(hand);
+        if(player.canEat(itemStack.getFoodProperties(player).canAlwaysEat())) {
+            player.startUsingItem(hand);
+            if (!level.isClientSide) {
+                level.playSound((Player) null, player.getX(), player.getY(), player.getZ(),
+                        SoundEvents.FIRE_AMBIENT, SoundSource.PLAYERS, 1.0F, 1.0F);
+            }
+
+            return InteractionResultHolder.consume(itemStack);
+        }
+        return InteractionResultHolder.fail(itemStack);
     }
 
     @Override
@@ -57,7 +75,7 @@ public class CigaretteItem extends Item {
 
     @Override
     public UseAnim getUseAnimation(ItemStack p_41452_) {
-        return UseAnim.DRINK;
+        return UseAnim.NONE;
     }
 
     public SoundEvent getDrinkingSound() { return SoundEvents.FIRE_AMBIENT; }
