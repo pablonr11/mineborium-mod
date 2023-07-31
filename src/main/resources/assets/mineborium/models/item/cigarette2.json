@@ -1,12 +1,24 @@
 {
-  "parent": "mineborium:item/cigarette",
-  "textures": {
-    "layer0": "mineborium:item/cigarette2"
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "mineborium:item/cigarette",
+    "textures": {
+      "layer0": "mineborium:item/cigarette2"
+    },
+    "display": {
+      "firstperson_righthand": {
+        "rotation": [ 100, 0, -130 ],
+        "translation": [ -8, 0, -5 ]
+      }
+    }
   },
-  "display": {
-    "firstperson_righthand": {
-      "rotation": [ 100, 0, -130 ],
-      "translation": [ -8, 0, -5 ]
+  "perspectives": {
+    "thirdperson_righthand": {
+      "parent": "mineborium:item/cigarette_entity2"
+    },
+    "thirdperson_lefthand": {
+      "parent": "mineborium:item/cigarette_entity2"
     }
   }
 }

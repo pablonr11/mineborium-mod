@@ -1,0 +1,32 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"1": "mineborium:item/cigarette_entity1"
+	},
+	"elements": [
+		{
+			"from": [2, 6, 7],
+			"to": [9, 8, 9],
+			"faces": {
+				"north": {"uv": [0, 0, 7, 2], "texture": "#1"},
+				"east": {"uv": [7, 0, 9, 2], "texture": "#1"},
+				"south": {"uv": [0, 2, 7, 4], "texture": "#1"},
+				"west": {"uv": [7, 2, 9, 4], "texture": "#1"},
+				"up": {"uv": [7, 6, 0, 4], "texture": "#1"},
+				"down": {"uv": [7, 6, 0, 8], "texture": "#1"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-125, 0, -106],
+			"translation": [-5, -1, 4.5],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-125, 0, 73],
+			"translation": [-5, -1.25, 4.25],
+			"scale": [0.5, 0.5, 0.5]
+		}
+	}
+}

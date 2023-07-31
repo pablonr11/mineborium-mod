@@ -1,5 +1,6 @@
 package com.mundobachata.mineborium.item.custom;
 
+import com.mundobachata.mineborium.entity.renderer.ModItemAnimations;
 import com.mundobachata.mineborium.networking.ModNetworking;
 import com.mundobachata.mineborium.networking.packet.SmokeC2SPacket;
 import net.minecraft.core.Direction;
@@ -18,6 +19,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
+
+import java.util.function.Consumer;
 
 public class CigaretteItem extends Item {
 
@@ -26,6 +30,12 @@ public class CigaretteItem extends Item {
     public CigaretteItem(Properties properties, boolean isDried) {
         super(properties.food(getCustomFoodProperties(isDried)));
         this.isDried = isDried;
+    }
+
+    @Override
+    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+        consumer.accept(ModItemAnimations.smokingAnimation);
+        super.initializeClient(consumer);
     }
 
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {

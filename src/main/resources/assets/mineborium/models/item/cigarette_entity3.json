@@ -1,0 +1,33 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "mineborium:item/cigarette_entity3",
+		"particle": "mineborium:item/cigarette_entity3"
+	},
+	"elements": [
+		{
+			"from": [4, 6, 7],
+			"to": [9, 8, 9],
+			"faces": {
+				"north": {"uv": [0, 0, 5, 2], "texture": "#0"},
+				"east": {"uv": [5, 2, 7, 4], "texture": "#0"},
+				"south": {"uv": [0, 2, 5, 4], "texture": "#0"},
+				"west": {"uv": [5, 4, 7, 6], "texture": "#0"},
+				"up": {"uv": [5, 6, 0, 4], "texture": "#0"},
+				"down": {"uv": [10, 0, 5, 2], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-125, 0, -106],
+			"translation": [-5, -1, 4.5],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-125, 0, 73],
+			"translation": [-5, -1.25, 4.25],
+			"scale": [0.5, 0.5, 0.5]
+		}
+	}
+}
