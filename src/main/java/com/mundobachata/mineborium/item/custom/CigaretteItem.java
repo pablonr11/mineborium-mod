@@ -8,6 +8,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -19,6 +20,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
 import java.util.function.Consumer;
@@ -56,30 +58,23 @@ public class CigaretteItem extends Item {
     public ItemStack finishUsingItem(ItemStack itemStack, Level level, LivingEntity livingEntity) {
         if(level.isClientSide()) {
             ModNetworking.sendToServer(new SmokeC2SPacket());
-            double x = livingEntity.getX();
-            double y = livingEntity.getY();
-            double z = livingEntity.getZ();
-
-            Direction.Axis axis = livingEntity.getDirection().getAxis();
-            Direction.AxisDirection axisDirection = livingEntity.getDirection().getAxisDirection();
-
-            switch (axis) {
-                case X -> x += getAxisDirectionValue(axisDirection);
-                case Z -> z += getAxisDirectionValue(axisDirection);
-            }
-
-            level.addParticle(ParticleTypes.SMOKE, x, y + 1.5D,
-                    z, 0.0D, 0.0D, 0.0D);
         }
 
         return super.finishUsingItem(itemStack, level, livingEntity);
     }
 
-    private double getAxisDirectionValue(Direction.AxisDirection axisDirection) {
-        if(axisDirection == Direction.AxisDirection.NEGATIVE) {
-            return -0.5D;
-        } else {
-            return 0.5D;
+    @Override
+    public void onUseTick(Level level, LivingEntity entity, ItemStack itemStack, int p_41431_) {
+        if (level.isClientSide() && entity.isUsingItem() && entity.getUseItemRemainingTicks() % 3 == 0) {
+            double x = entity.getX();
+            double y = entity.getY();
+            double z = entity.getZ();
+
+            level.addParticle(ParticleTypes.SMOKE,
+                    x + entity.getLookAngle().x,
+                    y + 1.5D + entity.getLookAngle().y,
+                    z + entity.getLookAngle().z,
+                    0.0D, 0.0D, 0.0D);
         }
     }
 

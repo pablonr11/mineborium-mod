@@ -34,7 +34,6 @@ public class MarlboriumOreBlock extends DropExperienceBlock {
     }
 
     public void attack(BlockState blockState, Level level, BlockPos blockPos, Player player) {
-        System.out.println("attacking");
         interact(blockState, level, blockPos, true);
         super.attack(blockState, level, blockPos, player);
     }
