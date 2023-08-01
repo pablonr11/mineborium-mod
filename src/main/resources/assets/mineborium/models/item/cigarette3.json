@@ -10,6 +10,10 @@
       "firstperson_righthand": {
         "rotation": [ 100, 0, -130 ],
         "translation": [ -8, 0, -5 ]
+      },
+      "firstperson_lefthand": {
+        "rotation": [ 100, 0, -225 ],
+        "translation": [ -8, 0, -5 ]
       }
     }
   },
