@@ -8,5 +8,12 @@
     "down": "mineborium:block/pack_of_cigarettes_bottom",
     "south": "mineborium:block/pack_of_cigarettes_back",
     "particle": "mineborium:block/pack_of_cigarettes_front"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [ 0, 180, 0 ],
+      "translation": [ 0, 0, 0 ],
+      "scale": [ 0.40, 0.40, 0.40 ]
+    }
   }
 }
