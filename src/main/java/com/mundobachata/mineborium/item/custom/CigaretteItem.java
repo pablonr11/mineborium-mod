@@ -16,9 +16,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
@@ -42,6 +40,17 @@ public class CigaretteItem extends Item {
 
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
+
+        if(!playerHasLighter(player, itemStack)) {
+            return InteractionResultHolder.fail(itemStack);
+        }
+
+        if(!level.isClientSide) {
+            damageLighter(player, itemStack);
+        }
+
+        player.getCooldowns().addCooldown(this, 84);
+
         if(player.canEat(itemStack.getFoodProperties(player).canAlwaysEat())) {
             player.startUsingItem(hand);
             if (!level.isClientSide) {
@@ -100,6 +109,47 @@ public class CigaretteItem extends Item {
                     new MobEffectInstance(MobEffects.CONFUSION, 600, 0), 1.0F);
         }
         return foodPropertiesBuilder.build();
+    }
+
+    private boolean playerHasLighter(Player player, ItemStack usingItem) {
+        ItemStack secondItem = getSecondaryItem(player, usingItem);
+        return secondItem.getItem() instanceof FlintAndSteelItem || secondItem.getItem() instanceof FireChargeItem;
+    }
+
+    private ItemStack getSecondaryItem(Player player, ItemStack usingItem) {
+        boolean cigaretteIsInMainHand = cigaretteIsInMainHand(player, usingItem);
+
+        ItemStack secondItem;
+        if(cigaretteIsInMainHand) {
+            secondItem = player.getOffhandItem();
+        } else {
+            secondItem = player.getMainHandItem();
+        }
+
+        return secondItem;
+    }
+
+    private boolean cigaretteIsInMainHand(Player player, ItemStack usingItem) {
+        return player.getMainHandItem() == usingItem;
+    }
+
+    private void damageLighter(Player player, ItemStack usingItem) {
+        InteractionHand lighterHand;
+        if (cigaretteIsInMainHand(player, usingItem)) {
+            lighterHand = InteractionHand.OFF_HAND;
+        } else {
+            lighterHand = InteractionHand.MAIN_HAND;
+        }
+
+        ItemStack lighterItem = getSecondaryItem(player, usingItem);
+
+        if(lighterItem.getItem() instanceof FlintAndSteelItem) {
+            lighterItem.hurtAndBreak(1, player, (entity) -> {
+                entity.broadcastBreakEvent(lighterHand);
+            });
+        } else if (lighterItem.getItem() instanceof FireChargeItem) {
+            lighterItem.shrink(1);
+        }
     }
 }
 
