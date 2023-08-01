@@ -8,6 +8,7 @@ import com.mundobachata.mineborium.entity.renderer.MarlboriumArrowRenderer;
 import com.mundobachata.mineborium.block.entity.renderer.RollingMachineBlockEntityRenderer;
 import com.mundobachata.mineborium.item.ModCreativeModeTabs;
 import com.mundobachata.mineborium.item.ModItems;
+import com.mundobachata.mineborium.item.custom.properties.ModItemProperties;
 import com.mundobachata.mineborium.loot.ModLootModifiers;
 import com.mundobachata.mineborium.networking.ModNetworking;
 import com.mundobachata.mineborium.screen.ModMenuTypes;
@@ -143,43 +144,10 @@ public class Mineborium {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             event.enqueueWork(() -> {
-                ItemProperties.register(ModItems.CIGARETTE.get(),
-                        new ResourceLocation(Mineborium.MOD_ID, "smoke"), (stack, level, living, id) -> {
-                            if(living == null) {
-                                return 0.0F;
-                            }
-
-                            return living.isUsingItem() && living.getUseItem() == stack ?
-                                    (float)(stack.getUseDuration() - living.getUseItemRemainingTicks()) / (float)stack.getUseDuration() : 0.0F;
-                        });
-
-                ItemProperties.register(ModItems.DRY_CIGARETTE.get(),
-                        new ResourceLocation(Mineborium.MOD_ID, "smoke"), (stack, level, living, id) -> {
-                            if(living == null) {
-                                return 0.0F;
-                            }
-
-                            return living.isUsingItem() && living.getUseItem() == stack ?
-                                    (float)(stack.getUseDuration() - living.getUseItemRemainingTicks()) / (float)stack.getUseDuration() : 0.0F;
-                        });
-
-                ItemProperties.register(ModItems.CIGARETTE.get(),
-                        new ResourceLocation(Mineborium.MOD_ID, "smoking"), (stack, level, living, id) -> {
-                            if(living == null) {
-                                return 0.0F;
-                            }
-
-                            return living.isUsingItem() && living.getUseItem() == stack ? 1.0F : 0.0F;
-                        });
-
-                ItemProperties.register(ModItems.DRY_CIGARETTE.get(),
-                        new ResourceLocation(Mineborium.MOD_ID, "smoking"), (stack, level, living, id) -> {
-                            if(living == null) {
-                                return 0.0F;
-                            }
-
-                            return living.isUsingItem() && living.getUseItem() == stack ? 1.0F : 0.0F;
-                        });
+                ModItemProperties.registerSmokeProperty(ModItems.CIGARETTE.get());
+                ModItemProperties.registerSmokeProperty(ModItems.DRY_CIGARETTE.get());
+                ModItemProperties.registerSmokingProperty(ModItems.CIGARETTE.get());
+                ModItemProperties.registerSmokingProperty(ModItems.DRY_CIGARETTE.get());
             });
             MenuScreens.register(ModMenuTypes.ROLLING_MACHINE_MENU.get(), RollingMachineScreen::new);
         }
