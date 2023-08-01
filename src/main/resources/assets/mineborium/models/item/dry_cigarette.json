@@ -1,15 +1,35 @@
 {
-  "loader": "forge:separate_transforms",
-  "gui_light": "front",
-  "base": {
-    "parent": "minecraft:item/generated",
-    "textures": {
-      "layer0": "mineborium:item/dry_cigarette"
-    }
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mineborium:item/dry_cigarette"
   },
-  "perspectives": {
-    "ground": {
-      "parent": "mineborium:item/cigarette3"
+  "overrides": [
+    {
+      "predicate": {
+        "mineborium:smoking": 1
+      },
+      "model": "mineborium:item/dry_cigarette_in_use"
+    },
+    {
+      "predicate": {
+        "mineborium:smoking": 1,
+        "mineborium:smoke": 0.25
+      },
+      "model": "mineborium:item/dry_cigarette1"
+    },
+    {
+      "predicate": {
+        "mineborium:smoking": 1,
+        "mineborium:smoke": 0.58
+      },
+      "model": "mineborium:item/dry_cigarette2"
+    },
+    {
+      "predicate": {
+        "mineborium:smoking": 1,
+        "mineborium:smoke": 0.85
+      },
+      "model": "mineborium:item/dry_cigarette3"
     }
-  }
+  ]
 }

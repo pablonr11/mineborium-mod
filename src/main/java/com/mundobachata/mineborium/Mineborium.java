@@ -153,7 +153,26 @@ public class Mineborium {
                                     (float)(stack.getUseDuration() - living.getUseItemRemainingTicks()) / (float)stack.getUseDuration() : 0.0F;
                         });
 
+                ItemProperties.register(ModItems.DRY_CIGARETTE.get(),
+                        new ResourceLocation(Mineborium.MOD_ID, "smoke"), (stack, level, living, id) -> {
+                            if(living == null) {
+                                return 0.0F;
+                            }
+
+                            return living.isUsingItem() && living.getUseItem() == stack ?
+                                    (float)(stack.getUseDuration() - living.getUseItemRemainingTicks()) / (float)stack.getUseDuration() : 0.0F;
+                        });
+
                 ItemProperties.register(ModItems.CIGARETTE.get(),
+                        new ResourceLocation(Mineborium.MOD_ID, "smoking"), (stack, level, living, id) -> {
+                            if(living == null) {
+                                return 0.0F;
+                            }
+
+                            return living.isUsingItem() && living.getUseItem() == stack ? 1.0F : 0.0F;
+                        });
+
+                ItemProperties.register(ModItems.DRY_CIGARETTE.get(),
                         new ResourceLocation(Mineborium.MOD_ID, "smoking"), (stack, level, living, id) -> {
                             if(living == null) {
                                 return 0.0F;
