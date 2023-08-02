@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "mineborium:block/end_marlborium_rod_block",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "mineborium:block/end_marlborium_rod_block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "mineborium:block/end_marlborium_rod_block",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "mineborium:block/end_marlborium_rod_block",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "mineborium:block/end_marlborium_rod_block"
+    },
+    "facing=west": {
+      "model": "mineborium:block/end_marlborium_rod_block",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

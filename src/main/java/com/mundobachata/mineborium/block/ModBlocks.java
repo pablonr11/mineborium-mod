@@ -56,6 +56,9 @@ public class ModBlocks {
                     .strength(1.0F)
                     .sound(SoundType.CANDLE)));
 
+    public static final RegistryObject<Block> END_MARLBORIUM_ROD_BLOCK = registerBlock("end_marlborium_rod_block",
+            () -> new EndMarlboriumRodBlock(BlockBehaviour.Properties.copy(Blocks.END_ROD)));
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

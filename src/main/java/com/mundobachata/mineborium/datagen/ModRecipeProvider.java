@@ -132,6 +132,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         nineBlockStorageRecipes(consumer, RecipeCategory.MISC, ModItems.DRY_MARLBORIUM.get(),
                 RecipeCategory.MISC, ModBlocks.MARLBORIUM_DRIED_BLOCK.get(), "dry_marlborium",
                 null, "dry_compact_marlborium_block", null);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.END_MARLBORIUM_ROD_BLOCK.get())
+                .define('/', ModItems.CIGARETTE.get())
+                .define('#', Items.POPPED_CHORUS_FRUIT)
+                .pattern("/")
+                .pattern("#")
+                .unlockedBy("has_chorus_fruit_popped", has(Items.POPPED_CHORUS_FRUIT))
+                .save(consumer);
     }
 
     protected static void twoByTwoPacker(Consumer<FinishedRecipe> consumer, RecipeCategory recipeCategory, ItemLike itemLike, ItemLike itemLike1) {
