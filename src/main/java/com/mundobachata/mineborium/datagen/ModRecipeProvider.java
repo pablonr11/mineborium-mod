@@ -133,10 +133,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 RecipeCategory.MISC, ModBlocks.MARLBORIUM_DRIED_BLOCK.get(), "dry_marlborium",
                 null, "dry_compact_marlborium_block", null);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.END_MARLBORIUM_ROD_BLOCK.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.END_MARLBORIUM_ROD_BLOCK.get(), 2)
                 .define('/', ModItems.CIGARETTE.get())
+                .define('I', Items.BLAZE_ROD)
                 .define('#', Items.POPPED_CHORUS_FRUIT)
                 .pattern("/")
+                .pattern("I")
                 .pattern("#")
                 .unlockedBy("has_chorus_fruit_popped", has(Items.POPPED_CHORUS_FRUIT))
                 .save(consumer);
