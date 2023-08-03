@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-02T22:36:31.3253719	Recipes
+// 1.20.1	2023-08-03T23:30:36.5991173	Recipes
 656ff18405e11fe2a60adfe27764e611028b8496 data/mineborium/advancements/recipes/misc/cigarette.json
 967239d8887672ef5332b7b848cb444b924a09a2 data/mineborium/advancements/recipes/misc/cigarette2.json
 fcb687251a134da5c43faaf0407d2462d4625364 data/mineborium/advancements/recipes/misc/cigarette_filter.json
@@ -12,6 +12,7 @@ fcf46ab8cd6c8ee6b4188cd8e8bb7fdeb88277a3 data/mineborium/advancements/recipes/mi
 b60aec8626075af4f2ea5265ea97ebdd05cc171f data/mineborium/advancements/recipes/misc/marlborium_arrow.json
 754da341f1d21b548b1cfc4e6c4f29086f85d61a data/mineborium/advancements/recipes/misc/marlborium_axe.json
 a08c29a8bfa359d01ff5569d55c94b2e218de8eb data/mineborium/advancements/recipes/misc/marlborium_hoe.json
+aa873c04d119769b962912bf4d6121285f1f55d2 data/mineborium/advancements/recipes/misc/marlborium_horse_armor.json
 12b68328011c8b3a74b5f04a1a721309a49a588a data/mineborium/advancements/recipes/misc/marlborium_pickaxe.json
 8073dd08796dcd1d91a4183e3ee37f32f1610aef data/mineborium/advancements/recipes/misc/marlborium_shovel.json
 b6fb4f217c2fe96ebf43d3121783561eb3bc56e4 data/mineborium/advancements/recipes/misc/marlborium_sword.json
@@ -30,6 +31,7 @@ d32d5aca200b63e77c6e17207408c631d4001e40 data/mineborium/recipes/end_marlborium_
 02a06933f42086bdc6dcc5b385ed167af5cfde4b data/mineborium/recipes/marlborium_arrow.json
 05f5815b159ccf22e86d04aaf732c0b66051c899 data/mineborium/recipes/marlborium_axe.json
 2ed028af9dbd1bc3aa407c74c1f93ced1b6a7806 data/mineborium/recipes/marlborium_hoe.json
+97f396a02fea3dab50d4e6ffcaf7320bfc03904d data/mineborium/recipes/marlborium_horse_armor.json
 b422c01f5a617222ee69516d1b6313d3c7eab663 data/mineborium/recipes/marlborium_pickaxe.json
 3f3c9659c95bec43e3e2926cd547be3f141e5df2 data/mineborium/recipes/marlborium_shovel.json
 934a6cfda7ed1dbaf15202d96762bdc3e5e3214a data/mineborium/recipes/marlborium_sword.json

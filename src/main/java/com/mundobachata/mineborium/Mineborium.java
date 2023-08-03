@@ -101,6 +101,7 @@ public class Mineborium {
             event.accept(ModItems.CIGARETTE_SWORD);
             event.accept(ModItems.MARLBORIUM_SWORD);
             event.accept(ModItems.MARLBORIUM_ARROW);
+            event.accept(ModItems.MARLBORIUM_HORSE_ARMOR);
         }
 
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
@@ -138,6 +139,7 @@ public class Mineborium {
             event.accept(ModItems.MARLBORIUM_PICKAXE);
             event.accept(ModItems.MARLBORIUM_AXE);
             event.accept(ModItems.MARLBORIUM_HOE);
+            event.accept(ModItems.MARLBORIUM_HORSE_ARMOR);
         }
     }
 

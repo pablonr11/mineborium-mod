@@ -142,6 +142,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("#")
                 .unlockedBy("has_chorus_fruit_popped", has(Items.POPPED_CHORUS_FRUIT))
                 .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MARLBORIUM_HORSE_ARMOR.get())
+                .define('#', ModBlocks.PACK_OF_CIGARETTES_BLOCK.get())
+                .pattern("# #")
+                .pattern("###")
+                .pattern("# #")
+                .unlockedBy("has_pack_of_cigarettes", has(ModBlocks.PACK_OF_CIGARETTES_BLOCK.get()))
+                .save(consumer);
     }
 
     protected static void twoByTwoPacker(Consumer<FinishedRecipe> consumer, RecipeCategory recipeCategory, ItemLike itemLike, ItemLike itemLike1) {

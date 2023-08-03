@@ -24,6 +24,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.ROLLING_PAPER);
         simpleItem(ModItems.MARLBORIUM_ARROW);
         simpleItem(ModItems.CIGARETTE_STEW);
+        simpleItem(ModItems.MARLBORIUM_HORSE_ARMOR);
 
         handheldItem(ModItems.MARLBORIUM_SWORD);
         handheldItem(ModItems.MARLBORIUM_PICKAXE);

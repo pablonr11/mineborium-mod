@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-02T18:55:18.0495152	Item Models: mineborium
+// 1.20.1	2023-08-03T23:19:39.2389402	Item Models: mineborium
 101d01df0e9380f54b037ca39b3b2530d3aca1a9 assets/mineborium/models/item/cigarette_filter.json
 d188dbb7e289ab287218e59fbf482a4cd7888d76 assets/mineborium/models/item/cigarette_stew.json
 a23ff7844fed3b486ae98d9ff7f5a0c4ffcd4642 assets/mineborium/models/item/cigarette_sword.json
@@ -7,6 +7,7 @@ ad300ec3d69fbcf3081ae9766cf760ece989c26a assets/mineborium/models/item/marlboriu
 1b7b8497f0735ef0ad86d754cb0e31bf842de983 assets/mineborium/models/item/marlborium_arrow.json
 b172e778602aa63ff88a3a4266dd63178780b221 assets/mineborium/models/item/marlborium_axe.json
 58c44faa6b75e0c45572bf77f5a0177241796610 assets/mineborium/models/item/marlborium_hoe.json
+0310d4b15232f18a9543029d5dd867d5b1ee32ec assets/mineborium/models/item/marlborium_horse_armor.json
 5d6fe8a33ffe6b6301426cd4d1feb53a54a6300c assets/mineborium/models/item/marlborium_nugget.json
 32bde5658ea6c75a5c8164c6991fabd6488be0e1 assets/mineborium/models/item/marlborium_pickaxe.json
 e089f53fb8b349bda60f13b602804daff5fa349f assets/mineborium/models/item/marlborium_shovel.json

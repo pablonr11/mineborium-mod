@@ -1,10 +1,7 @@
 package com.mundobachata.mineborium.item;
 
 import com.mundobachata.mineborium.Mineborium;
-import com.mundobachata.mineborium.item.custom.CigaretteItem;
-import com.mundobachata.mineborium.item.custom.CigaretteStewItem;
-import com.mundobachata.mineborium.item.custom.CigaretteSword;
-import com.mundobachata.mineborium.item.custom.MarlboriumArrowItem;
+import com.mundobachata.mineborium.item.custom.*;
 import com.mundobachata.mineborium.item.custom.tier.MarlboriumTier;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -46,6 +43,8 @@ public class ModItems {
             () -> new CigaretteStewItem(new Item.Properties()));
     public static final RegistryObject<Item> CIGARETTE_SWORD = ITEMS.register("cigarette_sword",
             () -> new CigaretteSword(3, -2.0F, new Item.Properties().rarity(Rarity.EPIC).food(CigaretteItem.getCustomFoodProperties(false))));
+    public static final RegistryObject<Item> MARLBORIUM_HORSE_ARMOR = ITEMS.register("marlborium_horse_armor",
+            () -> new ModHorseArmorItem(9, "marlborium", (new Item.Properties()).stacksTo(1)));
 
     // This is probably bullshit
     public static final RegistryObject<Item> CIGARETTE_ENTITY_ITEM = ITEMS.register("cigarette_entity_item",
