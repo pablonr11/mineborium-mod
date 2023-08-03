@@ -174,6 +174,18 @@ public class RollingMachineBlockEntity extends BlockEntity implements MenuProvid
         progress = nbt.getInt("rolling_machine.progress");
     }
 
+    @Override
+    public CompoundTag getUpdateTag() {
+        CompoundTag nbt = super.getUpdateTag();
+        saveAdditional(nbt);
+        return nbt;
+    }
+
+    @Override
+    public void handleUpdateTag(CompoundTag nbt) {
+        load(nbt);
+    }
+
     public void drops() {
         SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
 
