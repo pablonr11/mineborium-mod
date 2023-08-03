@@ -4,6 +4,7 @@ import com.mundobachata.mineborium.entity.renderer.ModItemAnimations;
 import com.mundobachata.mineborium.networking.ModNetworking;
 import com.mundobachata.mineborium.networking.packet.SmokeC2SPacket;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -19,6 +20,9 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
+import javax.swing.text.AttributeSet;
+import javax.swing.text.Style;
+import javax.swing.text.StyleConstants;
 import java.util.function.Consumer;
 
 public class CigaretteItem extends Item {
@@ -41,6 +45,10 @@ public class CigaretteItem extends Item {
 
         if(!player.isCreative()) {
             if(!playerHasLighter(player, itemStack)) {
+                if(level.isClientSide) {
+                    player.displayClientMessage(Component.translatable("client.message.mineborium.lighter_needed"),
+                            true);
+                }
                 return InteractionResultHolder.fail(itemStack);
             }
 

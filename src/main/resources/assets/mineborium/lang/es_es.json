@@ -26,5 +26,7 @@
 
   "entity.minecraft.villager.mineborium.smoke_shop_assistant": "Dependiente de estanco",
 
-  "creativemodetab.mineborium_tab": "Marlborium mod"
+  "creativemodetab.mineborium_tab": "Marlborium mod",
+
+  "client.message.mineborium.lighter_needed": "§c§oNecesitas un encendedor para poder fumar§r"
 }

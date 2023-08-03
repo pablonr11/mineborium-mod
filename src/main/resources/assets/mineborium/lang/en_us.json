@@ -25,6 +25,8 @@
 
   "entity.minecraft.villager.mineborium.smoke_shop_assistant": "Smoke shop assistant",
 
-  "creativemodetab.mineborium_tab": "Marlborium mod"
+  "creativemodetab.mineborium_tab": "Marlborium mod",
+
+  "client.message.mineborium.lighter_needed": "§c§oYou need a lighter to be able to smoke§r"
 
 }
