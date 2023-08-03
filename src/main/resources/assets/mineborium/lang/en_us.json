@@ -27,6 +27,9 @@
 
   "creativemodetab.mineborium_tab": "Marlborium mod",
 
-  "client.message.mineborium.lighter_needed": "§c§oYou need a lighter to be able to smoke§r"
+  "client.message.mineborium.lighter_needed": "§c§oYou need a lighter to be able to smoke§r",
+
+  "advancements.mineborium.smoke_cigarette.title": "It's just a hobby",
+  "advancements.mineborium.smoke_cigarette.description": "Smoke a cigarette"
 
 }

@@ -28,5 +28,9 @@
 
   "creativemodetab.mineborium_tab": "Marlborium mod",
 
-  "client.message.mineborium.lighter_needed": "§c§oNecesitas un encendedor para poder fumar§r"
+  "client.message.mineborium.lighter_needed": "§c§oNecesitas un encendedor para poder fumar§r",
+
+  "advancements.mineborium.smoke_cigarette.title": "Solo es un hobby",
+  "advancements.mineborium.smoke_cigarette.description": "Fumate un cigarro"
+
 }
