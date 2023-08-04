@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:totem_of_undying"
+    },
+    "title": {
+      "translate": "advancements.mineborium.death_by_cigarette.title"
+    },
+    "description": {
+      "translate": "advancements.mineborium.death_by_cigarette.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "mineborium:smoke_cigarette",
+  "criteria": {
+    "death_by_cigarette": {
+      "trigger": "mineborium:death_by_cigarette",
+      "conditions": {}
+    }
+  },
+  "requirements": [
+    [
+      "death_by_cigarette"
+    ]
+  ]
+}
