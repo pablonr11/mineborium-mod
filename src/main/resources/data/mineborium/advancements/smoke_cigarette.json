@@ -10,10 +10,10 @@
       "translate": "advancements.mineborium.smoke_cigarette.description"
     },
     "frame": "task",
-    "background": "mineborium:textures/block/compact_marlborium_block.png",
     "show_toast": true,
     "announce_to_chat": true
   },
+  "parent": "mineborium:root",
   "criteria": {
     "cigarette": {
       "trigger": "minecraft:consume_item",

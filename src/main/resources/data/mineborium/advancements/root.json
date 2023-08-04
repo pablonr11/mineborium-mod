@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "mineborium:marlborium_nugget"
+    },
+    "title": {
+      "translate": "advancemenets.mineborium.marlborium.title"
+    },
+    "description": {
+      "translate": "advancemenets.mineborium.marlborium.description"
+    },
+    "frame": "task",
+    "background": "mineborium:textures/block/compact_marlborium_block.png",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "marlborium_nugget": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mineborium:marlborium_nugget"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "marlborium_nugget"
+    ]
+  ]
+}
