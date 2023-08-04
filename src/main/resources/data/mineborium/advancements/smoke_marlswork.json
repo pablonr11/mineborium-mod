@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "mineborium:cigarette_sword"
+    },
+    "title": {
+      "translate": "advancements.mineborium.smoke_marlsword.title"
+    },
+    "description": {
+      "translate": "advancements.mineborium.smoke_marlsword.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "mineborium:smoke_cigarette",
+  "criteria": {
+    "cigarette_sword": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "mineborium:cigarette_sword"
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "cigarette_sword"
+    ]
+  ]
+}
