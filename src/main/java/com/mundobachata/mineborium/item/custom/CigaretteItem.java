@@ -1,10 +1,13 @@
 package com.mundobachata.mineborium.item.custom;
 
+import com.mundobachata.mineborium.Mineborium;
 import com.mundobachata.mineborium.entity.renderer.ModItemAnimations;
 import com.mundobachata.mineborium.networking.ModNetworking;
 import com.mundobachata.mineborium.networking.packet.SmokeC2SPacket;
+import com.mundobachata.mineborium.trigger.ModTriggers;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -156,6 +159,9 @@ public class CigaretteItem extends Item {
                 entity.broadcastBreakEvent(lighterHand);
             });
         } else if (lighterItem.getItem() instanceof FireChargeItem) {
+            if(player instanceof ServerPlayer serverPlayer) {
+                ModTriggers.SMOKE_WITH_FIRE_CHARGE.trigger(serverPlayer);
+            }
             lighterItem.shrink(1);
         }
     }

@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:fire_charge"
+    },
+    "title": {
+      "translate": "advancements.mineborium.smoke_with_fire_charge.title"
+    },
+    "description": {
+      "translate": "advancements.mineborium.smoke_with_fire_charge.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "mineborium:smoke_cigarette",
+  "criteria": {
+    "smoke": {
+      "trigger": "mineborium:smoke_with_fire_charge",
+      "conditions": {}
+    }
+  },
+  "requirements": [
+    [
+      "smoke"
+    ]
+  ]
+}

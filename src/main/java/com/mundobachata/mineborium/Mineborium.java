@@ -13,6 +13,7 @@ import com.mundobachata.mineborium.loot.ModLootModifiers;
 import com.mundobachata.mineborium.networking.ModNetworking;
 import com.mundobachata.mineborium.screen.ModMenuTypes;
 import com.mundobachata.mineborium.screen.RollingMachineScreen;
+import com.mundobachata.mineborium.trigger.ModTriggers;
 import com.mundobachata.mineborium.villager.ModVillagers;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.item.ItemProperties;
@@ -57,6 +58,7 @@ public class Mineborium {
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
 //            ModNetworking.register();
+            ModTriggers.register();
         });
         // This should work inside the event.enqueueWork Supplier, but it is not working in there so...
         ModNetworking.register();
