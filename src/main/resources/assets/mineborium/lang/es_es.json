@@ -44,5 +44,20 @@
   "advancements.mineborium.consume_cigarette_stew.title": "WIP",
   "advancements.mineborium.consume_cigarette_stew.description": "Comete una sopa de cigarro",
   "advancements.mineborium.death_by_cigarette.title": "Muerte por cigarro",
-  "advancements.mineborium.death_by_cigarette.description": "Sobrevive hasta el cuadragésimo cigarro"
+  "advancements.mineborium.death_by_cigarette.description": "Sobrevive hasta el cuadragésimo cigarro",
+
+  "painting.mineborium.la_danse.author": "Henri Matisse",
+  "painting.mineborium.la_danse.title": "La Danza",
+  "painting.mineborium.light_red_over_black.author": "Mark Rothko",
+  "painting.mineborium.light_red_over_black.title": "Rojo claro sobre negro",
+  "painting.mineborium.philip_v_upside_down.author": "Josep Amorós",
+  "painting.mineborium.philip_v_upside_down.title": "Felipe V boca abajo",
+  "painting.mineborium.self_portrait.author": "Pablo Picasso",
+  "painting.mineborium.self_portrait.title": "Autorretrato",
+  "painting.mineborium.skull_of_a_skeleton_with_burning_cigarette.author": "Vincent van Gogh",
+  "painting.mineborium.skull_of_a_skeleton_with_burning_cigarette.title": "Cráneo con cigarro encendido",
+  "painting.mineborium.the_creation_of_adam.author": "Miguel Ángel",
+  "painting.mineborium.the_creation_of_adam.title": "La creación de Adán",
+  "painting.mineborium.the_scream.author": "Edvard Munch",
+  "painting.mineborium.the_scream.title": "El grito"
 }

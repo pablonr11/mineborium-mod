@@ -43,5 +43,20 @@
   "advancements.mineborium.consume_cigarette_stew.title": "WIP",
   "advancements.mineborium.consume_cigarette_stew.description": "Eat a cigarette stew",
   "advancements.mineborium.death_by_cigarette.title": "Death by cigarette",
-  "advancements.mineborium.death_by_cigarette.description": "Survive until the 40th cigarette"
+  "advancements.mineborium.death_by_cigarette.description": "Survive until the 40th cigarette",
+
+  "painting.mineborium.la_danse.author": "Henri Matisse",
+  "painting.mineborium.la_danse.title": "La Danse",
+  "painting.mineborium.light_red_over_black.author": "Mark Rothko",
+  "painting.mineborium.light_red_over_black.title": "Light Red Over Black",
+  "painting.mineborium.philip_v_upside_down.author": "Josep Amorós",
+  "painting.mineborium.philip_v_upside_down.title": "Philip V upside down",
+  "painting.mineborium.self_portrait.author": "Pablo Picasso",
+  "painting.mineborium.self_portrait.title": "Self Portrait",
+  "painting.mineborium.skull_of_a_skeleton_with_burning_cigarette.author": "Vincent van Gogh",
+  "painting.mineborium.skull_of_a_skeleton_with_burning_cigarette.title": "Skull of a Skeleton with Burning Cigarette",
+  "painting.mineborium.the_creation_of_adam.author": "Miguel Ángel",
+  "painting.mineborium.the_creation_of_adam.title": "The Creation of Adam",
+  "painting.mineborium.the_scream.author": "Edvard Munch",
+  "painting.mineborium.the_scream.title": "The scream"
 }

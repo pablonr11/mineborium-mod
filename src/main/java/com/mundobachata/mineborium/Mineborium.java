@@ -11,6 +11,7 @@ import com.mundobachata.mineborium.item.ModItems;
 import com.mundobachata.mineborium.item.custom.properties.ModItemProperties;
 import com.mundobachata.mineborium.loot.ModLootModifiers;
 import com.mundobachata.mineborium.networking.ModNetworking;
+import com.mundobachata.mineborium.painting.ModPaintings;
 import com.mundobachata.mineborium.screen.ModMenuTypes;
 import com.mundobachata.mineborium.screen.RollingMachineScreen;
 import com.mundobachata.mineborium.trigger.ModTriggers;
@@ -42,6 +43,7 @@ public class Mineborium {
 
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
+        ModPaintings.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
