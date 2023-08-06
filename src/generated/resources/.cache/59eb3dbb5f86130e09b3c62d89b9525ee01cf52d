@@ -1,4 +1,5 @@
-// 1.20.1	2023-08-02T18:55:18.0505153	Loot Tables
+// 1.20.1	2023-08-06T19:43:03.5159408	Loot Tables
+7b0a5cba685536a11d6d3655fa11979ecf57f117 data/mineborium/loot_tables/blocks/ashtray_block.json
 9a52be1d8060cf8db155f644e1f48680326fac42 data/mineborium/loot_tables/blocks/compact_marlborium_block.json
 4cc42b3450b0c6bb7a8e0aaefaeaf3d29c475233 data/mineborium/loot_tables/blocks/deepslate_marlborium_ore_block.json
 c67e2e06684d9190ecc6e16bbbd74fbc8e0abf35 data/mineborium/loot_tables/blocks/dry_compact_marlborium_block.json

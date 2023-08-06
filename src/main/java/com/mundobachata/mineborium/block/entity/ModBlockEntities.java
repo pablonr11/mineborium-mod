@@ -17,6 +17,11 @@ public class ModBlockEntities {
                     BlockEntityType.Builder.of(RollingMachineBlockEntity::new,
                             ModBlocks.ROLLING_MACHINE_BLOCK.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<AshtrayBlockEntity>> ASHTRAY_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("ashtray_block_entity", () ->
+                    BlockEntityType.Builder.of(AshtrayBlockEntity::new,
+                            ModBlocks.ASHTRAY_BLOCK.get()).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

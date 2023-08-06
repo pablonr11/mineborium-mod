@@ -3,6 +3,7 @@ package com.mundobachata.mineborium;
 import com.mojang.logging.LogUtils;
 import com.mundobachata.mineborium.block.ModBlocks;
 import com.mundobachata.mineborium.block.entity.ModBlockEntities;
+import com.mundobachata.mineborium.block.entity.renderer.AshtrayBlockEntityRenderer;
 import com.mundobachata.mineborium.entity.ModEntityTypes;
 import com.mundobachata.mineborium.entity.renderer.MarlboriumArrowRenderer;
 import com.mundobachata.mineborium.block.entity.renderer.RollingMachineBlockEntityRenderer;
@@ -79,6 +80,7 @@ public class Mineborium {
             event.accept(ModBlocks.MARLBORIUM_DRIED_BLOCK);
             event.accept(ModBlocks.PACK_OF_CIGARETTES_BLOCK);
             event.accept(ModBlocks.END_MARLBORIUM_ROD_BLOCK);
+            event.accept(ModBlocks.ASHTRAY_BLOCK);
         }
 
         if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
@@ -126,6 +128,7 @@ public class Mineborium {
             event.accept(ModBlocks.ROLLING_MACHINE_BLOCK);
             event.accept(ModBlocks.PACK_OF_CIGARETTES_BLOCK);
             event.accept(ModBlocks.END_MARLBORIUM_ROD_BLOCK);
+            event.accept(ModBlocks.ASHTRAY_BLOCK);
 
             // Items
             event.accept(ModItems.CIGARETTE);
@@ -170,6 +173,9 @@ public class Mineborium {
         public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
             event.registerBlockEntityRenderer(ModBlockEntities.ROLLING_MACHINE.get(),
                     RollingMachineBlockEntityRenderer::new);
+
+            event.registerBlockEntityRenderer(ModBlockEntities.ASHTRAY_BLOCK_ENTITY.get(),
+                    AshtrayBlockEntityRenderer::new);
         }
     }
 
