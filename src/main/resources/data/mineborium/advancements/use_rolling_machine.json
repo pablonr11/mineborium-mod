@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mineborium:rolling_machine_block"
+    },
+    "title": {
+      "translate": "advancements.mineborium.use_rolling_machine.title"
+    },
+    "description": {
+      "translate": "advancements.mineborium.use_rolling_machine.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "mineborium:root",
+  "criteria": {
+    "use_rolling_machine": {
+      "trigger": "mineborium:use_rolling_machine",
+      "conditions": {}
+    }
+  },
+  "requirements": [
+    [
+      "use_rolling_machine"
+    ]
+  ]
+}

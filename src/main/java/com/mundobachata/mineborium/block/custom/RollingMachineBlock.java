@@ -2,6 +2,7 @@ package com.mundobachata.mineborium.block.custom;
 
 import com.mundobachata.mineborium.block.entity.ModBlockEntities;
 import com.mundobachata.mineborium.block.entity.RollingMachineBlockEntity;
+import com.mundobachata.mineborium.trigger.ModTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
@@ -76,6 +77,7 @@ public class RollingMachineBlock extends BaseEntityBlock {
             BlockEntity entity = level.getBlockEntity(blockPos);
             if(entity instanceof RollingMachineBlockEntity) {
                 NetworkHooks.openScreen(((ServerPlayer) player), (RollingMachineBlockEntity)entity, blockPos);
+                ModTriggers.USE_ROLLING_MACHINE.trigger(((ServerPlayer) player));
                 return InteractionResult.CONSUME;
             } else {
                 throw new IllegalStateException("Our Container provider is missing");
