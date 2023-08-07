@@ -27,7 +27,7 @@ public class ModPaintings {
             PAINTINGS.register("skull_of_a_skeleton_with_burning_cigarette",
             () -> new PaintingVariant(64, 48));
 
-    public static final RegistryObject<PaintingVariant> THE_CREATION_OF_ADAM = PAINTINGS.register("the_creation_of_adam",
+    public static final RegistryObject<PaintingVariant> THE_SMOKER = PAINTINGS.register("the_smoker",
             () -> new PaintingVariant(64, 32));
 
     public static final RegistryObject<PaintingVariant> THE_SCREAM = PAINTINGS.register("the_scream",
