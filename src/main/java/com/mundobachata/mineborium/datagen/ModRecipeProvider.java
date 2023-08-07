@@ -150,6 +150,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("# #")
                 .unlockedBy("has_pack_of_cigarettes", has(ModBlocks.PACK_OF_CIGARETTES_BLOCK.get()))
                 .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.ASHTRAY_BLOCK.get(), 1)
+                .define('#', Items.BRICK)
+                .define('*', ModItems.MARLBORIUM.get())
+                .pattern("#*#")
+                .pattern(" # ")
+                .unlockedBy("has_marlborium", has(ModItems.MARLBORIUM.get()))
+                .unlockedBy("has_brick", has(Items.BRICK))
+                .save(consumer);
     }
 
     protected static void twoByTwoPacker(Consumer<FinishedRecipe> consumer, RecipeCategory recipeCategory, ItemLike itemLike, ItemLike itemLike1) {
