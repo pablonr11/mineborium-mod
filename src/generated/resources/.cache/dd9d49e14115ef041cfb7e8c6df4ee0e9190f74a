@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-03T23:19:39.2389402	Item Models: mineborium
+// 1.20.1	2023-08-07T16:48:37.9195976	Item Models: mineborium
 101d01df0e9380f54b037ca39b3b2530d3aca1a9 assets/mineborium/models/item/cigarette_filter.json
 d188dbb7e289ab287218e59fbf482a4cd7888d76 assets/mineborium/models/item/cigarette_stew.json
 a23ff7844fed3b486ae98d9ff7f5a0c4ffcd4642 assets/mineborium/models/item/cigarette_sword.json
@@ -12,4 +12,5 @@ b172e778602aa63ff88a3a4266dd63178780b221 assets/mineborium/models/item/marlboriu
 32bde5658ea6c75a5c8164c6991fabd6488be0e1 assets/mineborium/models/item/marlborium_pickaxe.json
 e089f53fb8b349bda60f13b602804daff5fa349f assets/mineborium/models/item/marlborium_shovel.json
 b227e68a03dbd19ec0355ba52a57cc5cefd38529 assets/mineborium/models/item/marlborium_sword.json
+5d71dc8f461750982f08d800ba1a37288aba7cd5 assets/mineborium/models/item/marlboro_man_music_disc.json
 3c766b394e6bbf84e26a195d01b07246eb6815ca assets/mineborium/models/item/rolling_paper.json

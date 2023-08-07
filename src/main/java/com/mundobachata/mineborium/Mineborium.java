@@ -15,6 +15,7 @@ import com.mundobachata.mineborium.networking.ModNetworking;
 import com.mundobachata.mineborium.painting.ModPaintings;
 import com.mundobachata.mineborium.screen.ModMenuTypes;
 import com.mundobachata.mineborium.screen.RollingMachineScreen;
+import com.mundobachata.mineborium.sound.ModSounds;
 import com.mundobachata.mineborium.trigger.ModTriggers;
 import com.mundobachata.mineborium.villager.ModVillagers;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -47,6 +48,7 @@ public class Mineborium {
         ModPaintings.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
+        ModSounds.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         ModVillagers.register(modEventBus);
         ModEntityTypes.register(modEventBus);
@@ -147,6 +149,7 @@ public class Mineborium {
             event.accept(ModItems.MARLBORIUM_AXE);
             event.accept(ModItems.MARLBORIUM_HOE);
             event.accept(ModItems.MARLBORIUM_HORSE_ARMOR);
+            event.accept(ModItems.MARLBORO_MAN_MUSIC_DISC);
         }
     }
 

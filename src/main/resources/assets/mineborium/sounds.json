@@ -1,0 +1,10 @@
+{
+  "marlboro_man": {
+    "sounds": [
+      {
+        "name": "mineborium:marlboro_man",
+        "stream": true
+      }
+    ]
+  }
+}
