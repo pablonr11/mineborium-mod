@@ -9,6 +9,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -206,6 +208,9 @@ public class RollingMachineBlockEntity extends BlockEntity implements MenuProvid
             setChanged(level, blockPos, state);
 
             if(entity.progress >= entity.maxProgess) {
+                /*level.playSound((Player) null, blockPos.getX(), blockPos.getY(),
+                        blockPos.getZ(), SoundEvents.ANVIL_USE, SoundSource.BLOCKS,
+                        1.0f, 1.0f);*/
                 craftItem(entity);
             }
         } else {

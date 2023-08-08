@@ -13,7 +13,7 @@ public class ModLootModifiers {
             DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, Mineborium.MOD_ID);
 
     public static final RegistryObject<Codec<? extends IGlobalLootModifier>> ADD_CIGARETTE_SWORD_TO_STRUCTURES =
-            LOOT_MODIFIER_SERIALIZERS.register("add_cigarette_sword_to_structures", AddCigaretteSwordToStructuresModifier.CODEC);
+            LOOT_MODIFIER_SERIALIZERS.register("add_cigarette_sword_to_structures", AddItemModifier.CODEC);
 
     public static void register(IEventBus bus) {
         LOOT_MODIFIER_SERIALIZERS.register(bus);

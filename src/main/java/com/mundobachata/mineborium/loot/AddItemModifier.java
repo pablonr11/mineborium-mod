@@ -15,17 +15,17 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
-public class AddCigaretteSwordToStructuresModifier extends LootModifier {
-    public static final Supplier<Codec<AddCigaretteSwordToStructuresModifier>> CODEC = Suppliers
+public class AddItemModifier extends LootModifier {
+    public static final Supplier<Codec<AddItemModifier>> CODEC = Suppliers
             .memoize(() -> RecordCodecBuilder.create(inst -> codecStart(inst).and(ForgeRegistries.ITEMS.getCodec()
                     .fieldOf("item").forGetter(m -> m.item))
                     .and(Codec.FLOAT.fieldOf("chance").forGetter(m -> m.chance))
-                    .apply(inst, AddCigaretteSwordToStructuresModifier::new)));
+                    .apply(inst, AddItemModifier::new)));
 
     private final Item item;
     private final float chance;
 
-    protected AddCigaretteSwordToStructuresModifier(LootItemCondition[] conditionsIn, Item item, float chance) {
+    protected AddItemModifier(LootItemCondition[] conditionsIn, Item item, float chance) {
         super(conditionsIn);
         this.item = item;
         this.chance = chance;
