@@ -60,10 +60,12 @@ public class AshtrayBlock extends Block implements EntityBlock {
 
                     ItemStack leftOver = inventory.insertItem(0, toInsert, false);
 
-                    ItemStack handStack = stack.copy();
-                    handStack.setCount(handStack.getCount() - 1);
-                    handStack.grow(leftOver.getCount());
-                    player.setItemInHand(hand, handStack);
+                    if(!player.isCreative()) {
+                        ItemStack handStack = stack.copy();
+                        handStack.setCount(handStack.getCount() - 1);
+                        handStack.grow(leftOver.getCount());
+                        player.setItemInHand(hand, handStack);
+                    }
                 }
 
                 return InteractionResult.SUCCESS;
