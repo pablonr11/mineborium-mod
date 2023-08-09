@@ -3,7 +3,6 @@ package com.mundobachata.mineborium.block.custom;
 import com.mundobachata.mineborium.block.entity.AshtrayBlockEntity;
 import com.mundobachata.mineborium.item.custom.CigaretteItem;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -13,8 +12,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -85,12 +82,5 @@ public class AshtrayBlock extends Block implements EntityBlock {
             }
         }
         super.onRemove(state, level, pos, newBlockState, isMoving);
-    }
-
-    @Nullable
-    @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state,
-                                                                  BlockEntityType<T> type) {
-        return level.isClientSide ? null : (level0, pos0, state0, blockEntity) -> ((AshtrayBlockEntity)blockEntity).tick();
     }
 }

@@ -1,6 +1,7 @@
 package com.mundobachata.mineborium.networking;
 
 import com.mundobachata.mineborium.Mineborium;
+import com.mundobachata.mineborium.networking.packet.AshtrayItemStackSyncS2CPacket;
 import com.mundobachata.mineborium.networking.packet.ItemStackSyncS2CPacket;
 import com.mundobachata.mineborium.networking.packet.SmokeC2SPacket;
 import net.minecraft.resources.ResourceLocation;
@@ -38,6 +39,12 @@ public class ModNetworking {
                 .decoder(ItemStackSyncS2CPacket::new)
                 .encoder(ItemStackSyncS2CPacket::toBytes)
                 .consumerMainThread(ItemStackSyncS2CPacket::handle)
+                .add();
+
+        net.messageBuilder(AshtrayItemStackSyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(AshtrayItemStackSyncS2CPacket::new)
+                .encoder(AshtrayItemStackSyncS2CPacket::toBytes)
+                .consumerMainThread(AshtrayItemStackSyncS2CPacket::handle)
                 .add();
 
     }

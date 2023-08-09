@@ -2,16 +2,16 @@ package com.mundobachata.mineborium.block.entity;
 
 import com.mundobachata.mineborium.Mineborium;
 import com.mundobachata.mineborium.item.ModItems;
+import com.mundobachata.mineborium.networking.ModNetworking;
+import com.mundobachata.mineborium.networking.packet.AshtrayItemStackSyncS2CPacket;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.Containers;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -30,6 +30,9 @@ public class AshtrayBlockEntity extends BlockEntity {
         protected void onContentsChanged(int slot) {
             super.onContentsChanged(slot);
             AshtrayBlockEntity.this.setChanged();
+            if(!level.isClientSide()) {
+                ModNetworking.sendToClient(new AshtrayItemStackSyncS2CPacket(this, worldPosition));
+            }
         }
     };
 
@@ -37,16 +40,6 @@ public class AshtrayBlockEntity extends BlockEntity {
 
     public AshtrayBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.ASHTRAY_BLOCK_ENTITY.get(), pos, state);
-    }
-
-    public void tick() {
-        if(this.level == null || this.level.isClientSide) {
-            return;
-        }
-
-        // Sync client (Should change this with networking for better performance)
-        this.level.sendBlockUpdated(this.worldPosition, getBlockState(), getBlockState(),
-                Block.UPDATE_ALL);
     }
 
     @Override
@@ -95,6 +88,12 @@ public class AshtrayBlockEntity extends BlockEntity {
         }
 
         Containers.dropContents(this.level, this.worldPosition, inventory);
+    }
+
+    public void setHandler(ItemStackHandler itemStackHandler) {
+        for(int i = 0; i < itemStackHandler.getSlots(); i++) {
+            inventory.setStackInSlot(i, itemStackHandler.getStackInSlot(i));
+        }
     }
 
     @Override
