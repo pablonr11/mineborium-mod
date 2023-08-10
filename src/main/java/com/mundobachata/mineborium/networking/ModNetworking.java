@@ -1,6 +1,7 @@
 package com.mundobachata.mineborium.networking;
 
 import com.mundobachata.mineborium.Mineborium;
+import com.mundobachata.mineborium.networking.packet.AbstinenceDataSyncS2CPacket;
 import com.mundobachata.mineborium.networking.packet.AshtrayItemStackSyncS2CPacket;
 import com.mundobachata.mineborium.networking.packet.ItemStackSyncS2CPacket;
 import com.mundobachata.mineborium.networking.packet.SmokeC2SPacket;
@@ -45,6 +46,12 @@ public class ModNetworking {
                 .decoder(AshtrayItemStackSyncS2CPacket::new)
                 .encoder(AshtrayItemStackSyncS2CPacket::toBytes)
                 .consumerMainThread(AshtrayItemStackSyncS2CPacket::handle)
+                .add();
+
+        net.messageBuilder(AbstinenceDataSyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(AbstinenceDataSyncS2CPacket::new)
+                .encoder(AbstinenceDataSyncS2CPacket::toBytes)
+                .consumerMainThread(AbstinenceDataSyncS2CPacket::handle)
                 .add();
 
     }

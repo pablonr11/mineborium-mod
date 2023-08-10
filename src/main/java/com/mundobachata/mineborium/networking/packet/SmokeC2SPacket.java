@@ -2,6 +2,7 @@ package com.mundobachata.mineborium.networking.packet;
 
 import com.mundobachata.mineborium.abstinence.PlayerAbstinence;
 import com.mundobachata.mineborium.abstinence.PlayerAbstinenceProvider;
+import com.mundobachata.mineborium.networking.ModNetworking;
 import com.mundobachata.mineborium.trigger.ModTriggers;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerLevel;
@@ -53,6 +54,10 @@ public class SmokeC2SPacket {
                     ModTriggers.DEATH_BY_CIGARETTE.trigger(player);
                     player.kill();
                 }
+
+                ModNetworking.sendToPlayer(
+                        new AbstinenceDataSyncS2CPacket(abstinence.getTicksSinceLastCigarette()),
+                        player);
             });
 
         });

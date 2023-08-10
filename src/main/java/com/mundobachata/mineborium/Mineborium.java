@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.mundobachata.mineborium.block.ModBlocks;
 import com.mundobachata.mineborium.block.entity.ModBlockEntities;
 import com.mundobachata.mineborium.block.entity.renderer.AshtrayBlockEntityRenderer;
+import com.mundobachata.mineborium.client.AbstinenceHudOverlay;
 import com.mundobachata.mineborium.entity.ModEntityTypes;
 import com.mundobachata.mineborium.entity.renderer.MarlboriumArrowRenderer;
 import com.mundobachata.mineborium.block.entity.renderer.RollingMachineBlockEntityRenderer;
@@ -24,6 +25,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -179,6 +181,11 @@ public class Mineborium {
 
             event.registerBlockEntityRenderer(ModBlockEntities.ASHTRAY_BLOCK_ENTITY.get(),
                     AshtrayBlockEntityRenderer::new);
+        }
+
+        @SubscribeEvent
+        public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {
+            event.registerAboveAll("abstinence", AbstinenceHudOverlay.ABSTINENCE_HUD);
         }
     }
 
