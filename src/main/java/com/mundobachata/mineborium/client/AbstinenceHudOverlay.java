@@ -3,7 +3,6 @@ package com.mundobachata.mineborium.client;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mundobachata.mineborium.Mineborium;
 import com.mundobachata.mineborium.abstinence.PlayerAbstinence;
-import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.gui.overlay.IGuiOverlay;
@@ -22,6 +21,10 @@ public class AbstinenceHudOverlay {
     private static final int NUMBER_OF_PHASES = ABSTINENCE_TEXTURES.length;
 
     public static final IGuiOverlay ABSTINENCE_HUD = ((gui, guiGraphics, partialTick, screenWidth, screenHeight) -> {
+        if (!ClientAbstinenceData.playerHasSmoked()) {
+            return;
+        }
+
         int x = screenWidth / 2;
         int y = screenHeight;
 
@@ -36,8 +39,8 @@ public class AbstinenceHudOverlay {
 
         for(int i = 0; i < NUMBER_OF_PHASES; i++) {
             if(
-                ClientAbstinenceData.get() >= PlayerAbstinence.APPLY_ABSTINENCE_EFFECT_TIME / NUMBER_OF_PHASES * i &&
-                ClientAbstinenceData.get() < PlayerAbstinence.APPLY_ABSTINENCE_EFFECT_TIME / NUMBER_OF_PHASES * (i + 1)
+                ClientAbstinenceData.getPlayerAbstinence() >= PlayerAbstinence.APPLY_ABSTINENCE_EFFECT_TIME / NUMBER_OF_PHASES * i &&
+                ClientAbstinenceData.getPlayerAbstinence() < PlayerAbstinence.APPLY_ABSTINENCE_EFFECT_TIME / NUMBER_OF_PHASES * (i + 1)
             ) {
                 currentPhase = i;
                 break;

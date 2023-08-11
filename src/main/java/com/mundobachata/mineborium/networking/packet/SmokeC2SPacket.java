@@ -56,7 +56,7 @@ public class SmokeC2SPacket {
                 }
 
                 ModNetworking.sendToPlayer(
-                        new AbstinenceDataSyncS2CPacket(abstinence.getTicksSinceLastCigarette()),
+                        new AbstinenceDataSyncS2CPacket(abstinence.getTicksSinceLastCigarette(), abstinence.hasSmoked()),
                         player);
             });
 

@@ -84,14 +84,14 @@ public class ModEvents {
                         event.player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, -1));
                     }
 
-                    if(abstinence.getTicksSinceLastCigarette() > PlayerAbstinence.ABSTINENCE_MAX_TIME) { // After 3 days without smoking the abstinence is gone.
+                    if(abstinence.getTicksSinceLastCigarette() >= PlayerAbstinence.ABSTINENCE_MAX_TIME) { // After 3 days without smoking the abstinence is gone.
                         abstinence.setHasSmoked(false);
                         abstinence.setHasAbstinenceEffect(false);
                         event.player.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
                     }
 
-                    if(abstinence.getTicksSinceLastCigarette() % 200 == 0) {
-                        ModNetworking.sendToPlayer(new AbstinenceDataSyncS2CPacket(abstinence.getTicksSinceLastCigarette()),
+                    if(abstinence.getTicksSinceLastCigarette() % 200 == 0) { // This can be calculated to be sent only when the phase is changed, but for now it does the trick.
+                        ModNetworking.sendToPlayer(new AbstinenceDataSyncS2CPacket(abstinence.getTicksSinceLastCigarette(), abstinence.hasSmoked()),
                                 (ServerPlayer) event.player);
                     }
                 }
@@ -149,7 +149,7 @@ public class ModEvents {
             if(event.getEntity() instanceof ServerPlayer player) {
                 player.getCapability(PlayerAbstinenceProvider.PLAYER_ABSTINENCE).ifPresent(abstinence -> {
                     ModNetworking.sendToPlayer(
-                            new AbstinenceDataSyncS2CPacket(abstinence.getTicksSinceLastCigarette()),
+                            new AbstinenceDataSyncS2CPacket(abstinence.getTicksSinceLastCigarette(), abstinence.hasSmoked()),
                             player);
                 });
             }
