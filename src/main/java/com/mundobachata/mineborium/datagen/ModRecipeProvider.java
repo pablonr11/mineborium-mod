@@ -42,6 +42,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .of(ModItems.MARLBORIUM.get()).build()))
                 .save(consumer);
 
+        nineBlockStorageRecipes(consumer, RecipeCategory.MISC, ModItems.CIGARETTE.get(),
+                RecipeCategory.MISC, ModBlocks.PACK_OF_CIGARETTES_BLOCK.get(), "cigarette2",
+                null, "pack_of_cigarettes_block", null);
+
         twoByTwoPacker(consumer, RecipeCategory.MISC, ModItems.MARLBORIUM.get(),
                 ModItems.MARLBORIUM_NUGGET.get());
         oneToOneConversionRecipe(consumer, ModItems.ROLLING_PAPER.get(), Items.PAPER, "rolling_paper", 4);
@@ -49,7 +53,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 RecipeCategory.MISC, ModBlocks.MARLBORIUM_BLOCK.get(), "marlborium2",
                 null, "compact_marlborium_block", null);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MARLBORIUM_ARROW.get(), 8)
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.MARLBORIUM_ARROW.get(), 8)
                 .define('A', Items.ARROW)
                 .define('C', ModItems.CIGARETTE.get())
                 .pattern("AAA")
@@ -59,7 +63,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .of(ModItems.CIGARETTE.get()).build()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MARLBORIUM_SWORD.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.MARLBORIUM_SWORD.get(), 1)
                 .define('S', Items.STICK)
                 .define('M', ModBlocks.MARLBORIUM_BLOCK.get())
                 .pattern("M")
@@ -68,7 +72,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_compact_marlborium_block", inventoryTrigger(ItemPredicate.Builder.item().of(ModBlocks.MARLBORIUM_BLOCK.get()).build()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MARLBORIUM_PICKAXE.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.MARLBORIUM_PICKAXE.get(), 1)
                 .define('S', Items.STICK)
                 .define('M', ModBlocks.MARLBORIUM_BLOCK.get())
                 .pattern("MMM")
@@ -77,7 +81,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_compact_marlborium_block", inventoryTrigger(ItemPredicate.Builder.item().of(ModBlocks.MARLBORIUM_BLOCK.get()).build()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MARLBORIUM_AXE.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.MARLBORIUM_AXE.get(), 1)
                 .define('S', Items.STICK)
                 .define('M', ModBlocks.MARLBORIUM_BLOCK.get())
                 .pattern("MM")
@@ -86,7 +90,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_compact_marlborium_block", inventoryTrigger(ItemPredicate.Builder.item().of(ModBlocks.MARLBORIUM_BLOCK.get()).build()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MARLBORIUM_SHOVEL.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.MARLBORIUM_SHOVEL.get(), 1)
                 .define('S', Items.STICK)
                 .define('M', ModBlocks.MARLBORIUM_BLOCK.get())
                 .pattern("M")
@@ -95,7 +99,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_compact_marlborium_block", inventoryTrigger(ItemPredicate.Builder.item().of(ModBlocks.MARLBORIUM_BLOCK.get()).build()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MARLBORIUM_HOE.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.MARLBORIUM_HOE.get(), 1)
                 .define('S', Items.STICK)
                 .define('M', ModBlocks.MARLBORIUM_BLOCK.get())
                 .pattern("MM")
@@ -104,11 +108,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_compact_marlborium_block", inventoryTrigger(ItemPredicate.Builder.item().of(ModBlocks.MARLBORIUM_BLOCK.get()).build()))
                 .save(consumer);
 
-        nineBlockStorageRecipes(consumer, RecipeCategory.MISC, ModItems.CIGARETTE.get(),
-                RecipeCategory.MISC, ModBlocks.PACK_OF_CIGARETTES_BLOCK.get(), "cigarette2",
-                null, "pack_of_cigarettes_block", null);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CIGARETTE_STEW.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CIGARETTE_STEW.get())
                 .requires(Blocks.BROWN_MUSHROOM).requires(Blocks.RED_MUSHROOM).requires(Items.BOWL)
                 .requires(ModItems.CIGARETTE.get())
                 .unlockedBy("has_cigarette", has(ModItems.CIGARETTE.get()))
@@ -133,7 +133,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 RecipeCategory.MISC, ModBlocks.MARLBORIUM_DRIED_BLOCK.get(), "dry_marlborium",
                 null, "dry_compact_marlborium_block", null);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.END_MARLBORIUM_ROD_BLOCK.get(), 2)
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.END_MARLBORIUM_ROD_BLOCK.get(), 2)
                 .define('/', ModItems.CIGARETTE.get())
                 .define('I', Items.BLAZE_ROD)
                 .define('#', Items.POPPED_CHORUS_FRUIT)
@@ -151,7 +151,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_pack_of_cigarettes", has(ModBlocks.PACK_OF_CIGARETTES_BLOCK.get()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.ASHTRAY_BLOCK.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.ASHTRAY_BLOCK.get(), 1)
                 .define('#', Items.BRICK)
                 .define('*', ModItems.MARLBORIUM.get())
                 .pattern("#*#")
