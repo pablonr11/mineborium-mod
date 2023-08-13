@@ -8,7 +8,9 @@ import com.mundobachata.mineborium.block.entity.renderer.RollingMachineBlockEnti
 import com.mundobachata.mineborium.client.AbstinenceHudOverlay;
 import com.mundobachata.mineborium.entity.ModEntityTypes;
 import com.mundobachata.mineborium.entity.renderer.MarlboriumArrowRenderer;
+import com.mundobachata.mineborium.entity.renderer.layer.ModModelLayers;
 import com.mundobachata.mineborium.entity.renderer.layer.SheepCigaretteLayer;
+import com.mundobachata.mineborium.entity.renderer.layer.model.SheepCigaretteModel;
 import com.mundobachata.mineborium.item.ModCreativeModeTabs;
 import com.mundobachata.mineborium.item.ModItems;
 import com.mundobachata.mineborium.item.custom.properties.ModItemProperties;
@@ -195,8 +197,15 @@ public class Mineborium {
         public static void onAddLayer(EntityRenderersEvent.AddLayers event) {
 
             LivingEntityRenderer<Sheep, SheepModel<Sheep>> renderer = event.getRenderer(EntityType.SHEEP);
-            SheepCigaretteLayer layer = new SheepCigaretteLayer(renderer);
+            SheepCigaretteLayer layer = new SheepCigaretteLayer(renderer, event.getContext().getModelSet());
             renderer.addLayer(layer);
+        }
+
+        @SubscribeEvent
+        public static void onRegisterLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+            event.registerLayerDefinition(ModModelLayers.SHEEP_CIGARETTE, () -> {
+                return SheepCigaretteModel.createCigaretteLayer();
+            });
         }
     }
 
