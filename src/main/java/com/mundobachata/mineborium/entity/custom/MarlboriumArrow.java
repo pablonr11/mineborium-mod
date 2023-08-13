@@ -63,7 +63,7 @@ public class MarlboriumArrow extends AbstractArrow {
     }
 
     public void addAdditionalSaveData(CompoundTag nbt) {
-        this.addAdditionalSaveData(nbt);
+        super.addAdditionalSaveData(nbt);
         nbt.putInt("nausea_duration", this.nauseaDuration);
         nbt.putInt("wither_duration", this.witherDuration);
     }
