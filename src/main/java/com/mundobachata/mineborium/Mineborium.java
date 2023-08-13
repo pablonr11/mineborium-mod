@@ -4,10 +4,11 @@ import com.mojang.logging.LogUtils;
 import com.mundobachata.mineborium.block.ModBlocks;
 import com.mundobachata.mineborium.block.entity.ModBlockEntities;
 import com.mundobachata.mineborium.block.entity.renderer.AshtrayBlockEntityRenderer;
+import com.mundobachata.mineborium.block.entity.renderer.RollingMachineBlockEntityRenderer;
 import com.mundobachata.mineborium.client.AbstinenceHudOverlay;
 import com.mundobachata.mineborium.entity.ModEntityTypes;
 import com.mundobachata.mineborium.entity.renderer.MarlboriumArrowRenderer;
-import com.mundobachata.mineborium.block.entity.renderer.RollingMachineBlockEntityRenderer;
+import com.mundobachata.mineborium.entity.renderer.layer.SheepCigaretteLayer;
 import com.mundobachata.mineborium.item.ModCreativeModeTabs;
 import com.mundobachata.mineborium.item.ModItems;
 import com.mundobachata.mineborium.item.custom.properties.ModItemProperties;
@@ -20,8 +21,10 @@ import com.mundobachata.mineborium.sound.ModSounds;
 import com.mundobachata.mineborium.trigger.ModTriggers;
 import com.mundobachata.mineborium.villager.ModVillagers;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.renderer.item.ItemProperties;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.model.SheepModel;
+import net.minecraft.client.renderer.entity.LivingEntityRenderer;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -186,6 +189,14 @@ public class Mineborium {
         @SubscribeEvent
         public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {
             event.registerAboveAll("abstinence", AbstinenceHudOverlay.ABSTINENCE_HUD);
+        }
+
+        @SubscribeEvent
+        public static void onAddLayer(EntityRenderersEvent.AddLayers event) {
+
+            LivingEntityRenderer<Sheep, SheepModel<Sheep>> renderer = event.getRenderer(EntityType.SHEEP);
+            SheepCigaretteLayer layer = new SheepCigaretteLayer(renderer);
+            renderer.addLayer(layer);
         }
     }
 
