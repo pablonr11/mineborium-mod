@@ -15,8 +15,8 @@ public class PlayerAbstinence {
     public static final int LEVEL_2_TOXICITY_TICKS = 400; // Number of ticks for the effect
     public static final int LEVEL_3_TOXICITY_CIGARETTES = 40; // Death effect (lmfao)
     public static final int CIGARETTES_IN_A_ROW_TICK_RANGE = 400;
-    public static final int ABSTINENCE_MAX_TIME = 1600;
-    public static final int APPLY_ABSTINENCE_EFFECT_TIME = 1000;
+    public static final int ABSTINENCE_MAX_TIME = 72000;
+    public static final int APPLY_ABSTINENCE_EFFECT_TIME = 36000;
     public PlayerAbstinence() {
         this.hasSmoked = false;
         this.hasAbstinenceEffect = false;
