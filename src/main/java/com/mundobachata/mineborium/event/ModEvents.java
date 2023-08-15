@@ -80,9 +80,13 @@ public class ModEvents {
                         abstinence.resetCigarettesInARow();
                     }
 
-                    if(!abstinence.hasAbstinenceEffect() && abstinence.getTicksSinceLastCigarette() >= PlayerAbstinence.APPLY_ABSTINENCE_EFFECT_TIME) {
-                        abstinence.setHasAbstinenceEffect(true);
-                        event.player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, -1));
+
+                    if(abstinence.getTicksSinceLastCigarette() >= PlayerAbstinence.APPLY_ABSTINENCE_EFFECT_TIME) {
+                        if(!abstinence.hasAbstinenceEffect()) {
+                            abstinence.setHasAbstinenceEffect(true);
+                        }
+                        event.player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, -1,
+                                0, false, false, true));
                     }
 
                     if(abstinence.getTicksSinceLastCigarette() >= PlayerAbstinence.ABSTINENCE_MAX_TIME) { // After 3 days without smoking the abstinence is gone.
