@@ -3,6 +3,8 @@ package com.mundobachata.mineborium.block.custom;
 import com.mundobachata.mineborium.block.entity.AshtrayBlockEntity;
 import com.mundobachata.mineborium.item.custom.CigaretteItem;
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -59,6 +61,9 @@ public class AshtrayBlock extends Block implements EntityBlock {
                     toInsert.setCount(1);
 
                     ItemStack leftOver = inventory.insertItem(0, toInsert, false);
+
+                    level.playSound((Player) null, pos.getX(), pos.getY(), pos.getZ(),
+                            SoundEvents.BONE_BLOCK_PLACE, SoundSource.BLOCKS, 0.2F, 1.0F);
 
                     if(!player.isCreative()) {
                         ItemStack handStack = stack.copy();
