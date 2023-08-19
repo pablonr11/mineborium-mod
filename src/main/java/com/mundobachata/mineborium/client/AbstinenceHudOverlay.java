@@ -28,11 +28,14 @@ public class AbstinenceHudOverlay {
         int x = screenWidth / 2;
         int y = screenHeight;
 
+        int horizontalAlign = 101;
+        int verticalAlign = 46;
+
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, EMPTY_ABSTINENCE);
 
-        guiGraphics.blit(EMPTY_ABSTINENCE, x + 95, y - 20, 0, 0, 16,
+        guiGraphics.blit(EMPTY_ABSTINENCE, x + horizontalAlign, y - verticalAlign, 0, 0, 16,
                 16, 16, 16);
 
         int currentPhase = -1;
@@ -49,7 +52,7 @@ public class AbstinenceHudOverlay {
 
         if(currentPhase >= 0) {
             RenderSystem.setShaderTexture(0, ABSTINENCE_TEXTURES[currentPhase]);
-            guiGraphics.blit(ABSTINENCE_TEXTURES[currentPhase], x + 95, y - 20, 0,
+            guiGraphics.blit(ABSTINENCE_TEXTURES[currentPhase], x + horizontalAlign, y - verticalAlign, 0,
                     0, 16, 16, 16, 16);
         }
     });
