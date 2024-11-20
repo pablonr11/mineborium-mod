@@ -4,19 +4,11 @@ import com.mundobachata.mineborium.Mineborium;
 import com.mundobachata.mineborium.abstinence.PlayerAbstinence;
 import com.mundobachata.mineborium.abstinence.PlayerAbstinenceProvider;
 import com.mundobachata.mineborium.block.ModBlocks;
-import com.mundobachata.mineborium.client.AbstinenceHudOverlay;
-import com.mundobachata.mineborium.client.ClientAbstinenceData;
 import com.mundobachata.mineborium.item.ModItems;
-import com.mundobachata.mineborium.item.custom.CigaretteItem;
 import com.mundobachata.mineborium.networking.ModNetworking;
 import com.mundobachata.mineborium.networking.packet.AbstinenceDataSyncS2CPacket;
 import com.mundobachata.mineborium.villager.ModVillagers;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import net.minecraft.client.model.PlayerModel;
-import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.player.AbstractClientPlayer;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -25,10 +17,10 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
-import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.TickEvent;
@@ -146,6 +138,13 @@ public class ModEvents {
     public static void onLivingHurt(LivingHurtEvent event) {
         /* This logic could go in CigaretteSword#hurtEnemy but then if an enemy with CanPickUpLoot hits a player
         * the effects is not applied to the player.*/
+
+        Entity attackerEntity = event.getSource().getEntity();
+
+        if(attackerEntity instanceof Arrow) {
+            return;
+        }
+
         LivingEntity attacker = (LivingEntity) event.getSource().getEntity();
         LivingEntity target = event.getEntity();
         if(attacker != null && target != null && attacker.getMainHandItem().getItem() == ModItems.CIGARETTE_SWORD.get()) {
