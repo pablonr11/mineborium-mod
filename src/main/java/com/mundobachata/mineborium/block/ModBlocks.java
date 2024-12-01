@@ -53,7 +53,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> PACK_OF_CIGARETTES_BLOCK = registerBlock("pack_of_cigarettes_block",
             () -> new PackOfCigarettesBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
-                    .strength(1.0F)
+                    .strength(0.2F)
                     .sound(SoundType.CANDLE)));
 
     public static final RegistryObject<Block> END_MARLBORIUM_ROD_BLOCK = registerBlock("end_marlborium_rod_block",

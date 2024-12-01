@@ -9,8 +9,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -18,6 +16,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -47,7 +46,7 @@ public class RollingMachineBlockEntity extends BlockEntity implements MenuProvid
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
                 case 0 -> stack.getItem() == ModItems.CIGARETTE_FILTER.get();
-                case 1 -> stack.getItem() == ModItems.MARLBORIUM.get();
+                case 1 -> stack.getItem() == ModItems.MARLBORIUM.get() || stack.getItem() == ModItems.DRY_MARLBORIUM.get();
                 case 2, 3 -> stack.getItem() == ModItems.ROLLING_PAPER.get();
                 case 4 -> false;
                 default -> super.isItemValid(slot, stack);
@@ -102,7 +101,8 @@ public class RollingMachineBlockEntity extends BlockEntity implements MenuProvid
     }
 
     public boolean hasCigaretteInOutput() {
-        return itemHandler.getStackInSlot(4).getItem() == ModItems.CIGARETTE.get();
+        Item output = itemHandler.getStackInSlot(4).getItem();
+        return output == ModItems.CIGARETTE.get() || output == ModItems.DRY_CIGARETTE.get();
     }
 
     public void setHandler(ItemStackHandler itemStackHandler) {
@@ -225,12 +225,20 @@ public class RollingMachineBlockEntity extends BlockEntity implements MenuProvid
 
     private static void craftItem(RollingMachineBlockEntity entity) {
         if(hasRecipe(entity)) {
+
+            Item marlboriumSlotItem = entity.itemHandler.getStackInSlot(1).getItem();
+            Item cigaretteItem = ModItems.CIGARETTE.get();
+
+            if(marlboriumSlotItem == ModItems.DRY_MARLBORIUM.get()) {
+                cigaretteItem = ModItems.DRY_CIGARETTE.get();
+            }
+
             entity.itemHandler.extractItem(0, 1, false);
             entity.itemHandler.extractItem(1, 1, false);
             entity.itemHandler.extractItem(2, 1, false);
             entity.itemHandler.extractItem(3, 1, false);
 
-            entity.itemHandler.setStackInSlot(4, new ItemStack(ModItems.CIGARETTE.get(),
+            entity.itemHandler.setStackInSlot(4, new ItemStack(cigaretteItem,
                     entity.itemHandler.getStackInSlot(4).getCount() + 1));
 
             entity.resetProgress();
@@ -243,14 +251,21 @@ public class RollingMachineBlockEntity extends BlockEntity implements MenuProvid
             inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
         }
 
+        Item marlboriumSlotItem = entity.itemHandler.getStackInSlot(1).getItem();
+        Item outputItem = ModItems.CIGARETTE.get();
+
+        if(marlboriumSlotItem == ModItems.DRY_MARLBORIUM.get()) {
+            outputItem = ModItems.DRY_CIGARETTE.get();
+        }
+
         boolean hasFilter = entity.itemHandler.getStackInSlot(0).getItem() == ModItems.CIGARETTE_FILTER.get();
-        boolean hasMarlborium = entity.itemHandler.getStackInSlot(1).getItem() == ModItems.MARLBORIUM.get();
+        boolean hasMarlborium = marlboriumSlotItem == ModItems.MARLBORIUM.get() || marlboriumSlotItem == ModItems.DRY_MARLBORIUM.get();
         boolean hasRollingPapers = entity.itemHandler.getStackInSlot(2).getItem() == ModItems.ROLLING_PAPER.get() &&
                 entity.itemHandler.getStackInSlot(3).getItem() == ModItems.ROLLING_PAPER.get();
 
         return hasFilter && hasMarlborium && hasRollingPapers &&
                 canInsertAmountIntoOutputSlot(inventory) &&
-                canInsertItemIntoOutputSlot(inventory, new ItemStack(ModItems.CIGARETTE.get(), 1));
+                canInsertItemIntoOutputSlot(inventory, new ItemStack(outputItem, 1));
 
     }
 

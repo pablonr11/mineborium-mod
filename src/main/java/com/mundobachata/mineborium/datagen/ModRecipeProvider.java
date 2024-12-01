@@ -8,6 +8,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -40,6 +41,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("PFP")
                 .unlockedBy("has_marlborium", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModItems.MARLBORIUM.get()).build()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.DRY_CIGARETTE.get())
+                .define('P', ModItems.ROLLING_PAPER.get())
+                .define('F', ModItems.CIGARETTE_FILTER.get())
+                .define('M', ModItems.DRY_MARLBORIUM.get())
+                .pattern("PMP")
+                .pattern("PMP")
+                .pattern("PFP")
+                .unlockedBy("has_dry_marlborium", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModItems.DRY_MARLBORIUM.get()).build()))
                 .save(consumer);
 
         nineBlockStorageRecipes(consumer, RecipeCategory.MISC, ModItems.CIGARETTE.get(),
